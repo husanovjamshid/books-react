@@ -1,6 +1,6 @@
 // import { Box } from "../../../app.style";
 import { Containers, HeaderBrand } from "./header.style";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const HeaderPage = () => {
   return (
@@ -117,9 +117,9 @@ export const HeaderPage = () => {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Add book Log out
-                      </a>
+                      <Link className="dropdown-item" to="/AddBook">
+                        Add book 
+                      </Link>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">

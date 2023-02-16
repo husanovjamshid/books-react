@@ -1,15 +1,34 @@
 import { Containers } from "../Header/header.style";
-import { AuthTitle, AuthWrap, TabWrap } from "./authCat.style";
-import '../../MainPage/main.css'
+import {
+  AuthTitle,
+  AuthWrap,
+  CardBody,
+  CardBottomImg,
+  CardDesc,
+  CardTitle,
+  CardTopImg,
+  CatCard,
+  TabWrap,
+} from "./authCat.style";
+import "../../MainPage/main.css";
+import card from "../../../assets/img/avloniy.png";
+import cardTop from "../../../assets/img/card-top.svg";
+import cardBottom from "../../../assets/img/card-bottom.svg";
+import { HeroPage } from "../Hero/HeroPage";
 
 export const AuthCategory = () => {
   return (
     <Containers>
+      <HeroPage />
       <AuthWrap>
         <AuthTitle>Asosiy kategoriyalar</AuthTitle>
 
         <TabWrap>
-          <ul className="nav nav-tabs mb-3" id="ex1" role="tablist">
+          <ul
+            className="nav nav-tabs mb-3 d-flex justify-content-center"
+            id="ex1"
+            role="tablist"
+          >
             <li className="nav-item" role="presentation">
               <a
                 className="nav-link active"
@@ -70,7 +89,41 @@ export const AuthCategory = () => {
               role="tabpanel"
               aria-labelledby="ex1-tab-1"
             >
-              Tab 1 content
+              <div className="row gy-4">
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+              </div>
             </div>
             <div
               className="tab-pane fade"
@@ -78,7 +131,41 @@ export const AuthCategory = () => {
               role="tabpanel"
               aria-labelledby="ex1-tab-2"
             >
-              Tab 2 content
+              <div className="row gy-4">
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+              </div>
             </div>
             <div
               className="tab-pane fade"
@@ -86,7 +173,41 @@ export const AuthCategory = () => {
               role="tabpanel"
               aria-labelledby="ex1-tab-3"
             >
-              Tab 3 content
+              <div className="row gy-4">
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+              </div>
             </div>
             <div
               className="tab-pane fade"
@@ -94,7 +215,41 @@ export const AuthCategory = () => {
               role="tabpanel"
               aria-labelledby="ex1-tab-4"
             >
-              Tab 4 content
+              <div className="row gy-4">
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+                <div className="col-md-3">
+                  <CatCard>
+                    <img width="295px" src={card} alt="" />
+                    <CardBody>
+                      <CardTopImg src={cardTop} alt="" />
+                      <CardTitle>Abdulla Avloniy</CardTitle>
+                      <CardDesc>1878-1934</CardDesc>
+                      <CardBottomImg src={cardBottom} alt="" />
+                    </CardBody>
+                  </CatCard>
+                </div>
+              </div>
             </div>
           </div>
         </TabWrap>
