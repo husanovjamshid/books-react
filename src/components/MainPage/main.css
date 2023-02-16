@@ -27,3 +27,34 @@
   overflow: hidden !important;
   border-radius: 27px !important;
 }
+
+.css-1gsv261 {
+  display: flex !important;
+  justify-content: center !important;
+  border-bottom: 0 !important;
+}
+
+.nav-link {
+  border-color: transparent !important;
+  font-family: "Poppins" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 27px !important;
+  color: rgba(13, 13, 13, 0.6) !important;
+}
+
+.nav-link:hover {
+  background-color: #fff !important;
+}
+
+.active {
+  border: none !important;
+  border-color: transparent !important;
+  font-family: "Poppins" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 27px !important;
+  color: #c9ac8c !important;
+}

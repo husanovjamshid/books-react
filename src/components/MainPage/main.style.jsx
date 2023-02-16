@@ -50,6 +50,15 @@ export const MainInput = styled.input`
   border-radius: 15px;
   outline: none;
   border: none;
+
+  &:placeholder-shown {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(13, 13, 13, 0.3);
+  }
 `;
 
 export const MainButton = styled.button`
