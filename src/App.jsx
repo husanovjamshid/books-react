@@ -1,5 +1,5 @@
 import { Public } from "./pages/Public/Public";
-import { globalStyled } from "./globalStyled.js";
+// import { globalStyled } from "./globalStyled.js";
 import { Private } from "./pages/Private/Private";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "./redux/Token/tokenAction";

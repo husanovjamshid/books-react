@@ -1,0 +1,29 @@
+.slick-dots li button:before {
+  content: "" !important;
+  display: block !important;
+  width: 57px !important;
+  height: 3px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-radius: 10px !important;
+}
+
+.slick-dots li.slick-active button:before {
+  background: #ffffff !important;
+  border-radius: 10px !important;
+}
+
+.slick-dots {
+  top: 70% !important;
+  left: 7% !important;
+  width: 0 !important;
+  bottom: 0 !important;
+  display: flex !important;
+  gap: 40px !important;
+}
+
+.slick-slider {
+  width: 100% !important;
+  max-width: 1240px !important;
+  overflow: hidden !important;
+  border-radius: 27px !important;
+}
