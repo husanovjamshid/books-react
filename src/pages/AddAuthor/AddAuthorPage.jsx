@@ -9,44 +9,46 @@ import {
   BookForm,
   FieldInputBook,
   FieldSelect,
-} from "./book.style";
+  TextSelect,
+} from "./author.style";
 import axios from "axios";
 import { useRef } from "react";
-import "../../components/MainPage/main.css";
+import "./fileupload.css";
 import addFile from "../../assets/img/add-file.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { setToken } from "../../redux/Token/tokenAction";
 
-import { api } from "../../Api/api";
-
-export const AddBook = () => {
+export const AddAuthors = () => {
   let firstRef = useRef();
   let lastRef = useRef();
-  let phoneRef = useRef();
-  let emailRef = useRef();
-  let passwordRef = useRef();
+  let birthRef = useRef();
+  let deathRef = useRef();
+  let countryRef = useRef();
+  let genreRef = useRef();
+  let bioRef = useRef();
+  let imgRef = useRef();
 
-  // const users = async (value) => {
-  //   const data = await api.userBook(value);
-  //   if (data.status === 201) {
-  //     localStorage.setItem("token", data.data.token);
-  //     localStorage.setItem("user", JSON.stringify(data.config.data));
-  //     dispatch(setToken(data.data.token));
-  //     console.log(dispatch(setToken(data.data.token)));
-  //     navigate('/')
-  //   }
-  // };
+  const token = useSelector((item) => item.token.token);
+  const dispatch = useDispatch();
+  dispatch(setToken(localStorage.getItem("token") || ""));
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    const formData = new FormData();
+    formData.append("first_name", firstRef.current.value);
+    formData.append("last_name", lastRef.current.value);
+    formData.append("date_of_birth", birthRef.current.value);
+    formData.append("date_of_death", deathRef.current.value);
+    formData.append("country", countryRef.current.value);
+    formData.append("genre_id", genreRef.current.value);
+    formData.append("bio", bioRef.current.value);
+    formData.append("image", imgRef.current.files[0]);
 
-    const values = {
-      first_name: firstRef.current.value,
-      last_name: lastRef.current.value,
-      phone: phoneRef.current.value,
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
-    };
-
-    users(values);
+    axios
+      .post("http://books.ogaw.uz/author", formData, {
+        headers: { Authorization: token },
+      })
+      .then((data) => console.log(data));
   };
 
   return (
@@ -58,10 +60,27 @@ export const AddBook = () => {
               <input
                 className="file-upload-input"
                 type="file"
-                onchange="readURL(this);"
                 accept="image/*"
+                ref={imgRef}
               />
               <div className="drag-text">
+                {/* {sendFile ? (
+                  <img
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      bottom: "0",
+                      right: "0",
+                    }}
+                    src={sendFile}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )} */}
                 <img src={addFile} alt="" />
                 <p>Click or drag file to this area to upload</p>
               </div>
@@ -71,7 +90,7 @@ export const AddBook = () => {
               <div className="image-title-wrap">
                 <button
                   type="button"
-                  onclick="removeUpload()"
+                  // onClick="removeUpload()"
                   className="remove-image"
                 >
                   Remove <span className="image-title">Uploaded Image</span>
@@ -107,19 +126,19 @@ export const AddBook = () => {
               <InputGroup>
                 <FieldInputBook
                   placeholder="Date of birth"
-                  type="text"
+                  type="number"
                   aria-describedby="emailHelp"
-                  ref={phoneRef}
+                  ref={birthRef}
                 />
               </InputGroup>
 
               <InputGroup>
                 <FieldInputBook
                   placeholder="Date of death"
-                  type="text"
+                  type="number"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
-                  ref={emailRef}
+                  ref={deathRef}
                 />
               </InputGroup>
               <InputGroup>
@@ -128,11 +147,12 @@ export const AddBook = () => {
                   type="text"
                   id="exampleInputEmail31"
                   aria-describedby="emailHelp"
-                  ref={passwordRef}
+                  ref={countryRef}
                 />
               </InputGroup>
               <InputGroup>
                 <FieldSelect
+                  ref={genreRef}
                   className="form-select"
                   aria-label="Default select example"
                 >
@@ -142,6 +162,9 @@ export const AddBook = () => {
                   <option value={3}>Sovet davri</option>
                   <option value={4}>Mustaqillik davri</option>
                 </FieldSelect>
+              </InputGroup>
+              <InputGroup>
+                <TextSelect ref={bioRef} placeholder="Bio"></TextSelect>
               </InputGroup>
 
               <BookButton type="submit">Create</BookButton>

@@ -112,13 +112,13 @@ export const HeaderPage = () => {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="/AddAuthor">
                         Add author
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/AddBook">
-                        Add book 
+                        Add book
                       </Link>
                     </li>
                     <li>

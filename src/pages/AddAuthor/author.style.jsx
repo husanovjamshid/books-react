@@ -90,6 +90,17 @@ export const FieldSelect = styled.select`
   padding: 10px 0 10px 28px;
 `;
 
+export const TextSelect = styled.textarea`
+  background: "#FFFFFF";
+  width: 100%;
+  max-width: 330px;
+  border: 1px solid #b4b4bb;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px 0 10px 28px;
+  resize: none;
+`;
+
 export const ReqSpan = styled.span`
   color: red;
   position: absolute;
@@ -114,6 +125,6 @@ export const BookButton = styled.button`
 `;
 
 export const InputGroup = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   position: relative;
 `;
