@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Books } from "../../components/Books/Books";
-import { AuthCategorys } from "../../components/Home/AuthorCategory/Category";
+import { AuthCategorys } from "../../components/AuthorCategory/Category";
 import { AddAuthors } from "../AddAuthor/AddAuthorPage";
 
 export const PrivatePage = () => {
