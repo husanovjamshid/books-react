@@ -29,6 +29,16 @@ export const AuthCategorys = () => {
   useEffect(() => {
     getGenre();
   }, []);
+
+  const getGenreAuthor = async (id) => {
+    const data = await axios.get(`http://localhost:5000/author/genreId/${id}`);
+    console.log(data);
+  };
+
+  const handleGenre = (genreId) => {
+    getGenreAuthor(genreId);
+  };
+
   return (
     <Containers>
       <HeroPage />
@@ -52,6 +62,7 @@ export const AuthCategorys = () => {
                     role="tab"
                     aria-controls={"#ex1-tabs-" + `${item.id}`}
                     aria-selected="false"
+                    onClick={() => handleGenre(item.id)}
                   >
                     {item.name}
                   </a>
@@ -85,9 +96,9 @@ export const AuthCategorys = () => {
             </div>
             <div
               className="tab-pane fade"
-              id={`ex1-tabs-2`}
+              id="ex1-tabs-2"
               role="tabpanel"
-              aria-labelledby={`ex1-tabs-2`}
+              aria-labelledby="ex1-tabs-2"
             >
               <div className="row gy-4">
                 <div className="col-md-3">
