@@ -61,3 +61,33 @@ export const CardTopImg = styled.img`
   top: -20%;
   right: 0;
 `;
+
+export const BookTitleName = styled.h3`
+  margin: 0;
+  margin-top: 12px;
+  /* margin-bottom: 6px; */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+`;
+
+export const BookAuthorName = styled.p`
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(13, 13, 13, 0.6);
+`;
+
+export const BookImg = styled.img`
+  max-width: 190px;
+  max-height: 283px;
+  min-width: 190px;
+  min-height: 283px;
+  border-radius: 15px;
+`;

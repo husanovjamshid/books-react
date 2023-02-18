@@ -16,34 +16,41 @@ import cardBottom from "../../assets/img/card-bottom.svg";
 import { HeroPage } from "../Home/Hero/HeroPage";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AuthId } from "../../redux/AuthorId/authorAction";
 
 export const AuthCategorys = () => {
   const [genre, setGenre] = useState([]);
   const [author, setAuthor] = useState([]);
   const [genresId, setGenreId] = useState(1);
 
+  // GET GENRE
   const getGenre = async () => {
     const data = await axios.get("http://localhost:5000/genre");
     setGenre(data.data);
   };
-
   useEffect(() => {
     getGenre();
   }, []);
 
+  // GET AUTHOR GENRES
   const getGenreAuthor = async (id) => {
     const data = await axios.get(`http://localhost:5000/author/genreId/${id}`);
     setAuthor(data.data);
-    console.log(data);
   };
-
   useEffect(() => {
     getGenreAuthor(1);
   }, []);
-
   const handleGenre = (genreId) => {
     getGenreAuthor(genreId);
     setGenreId(genreId);
+  };
+
+  // AUTHOR ID
+  const dispatch = useDispatch();
+  const handleAuthor = (id) => {
+    dispatch(AuthId(id));
   };
 
   return (
@@ -90,7 +97,12 @@ export const AuthCategorys = () => {
               {author.length ? (
                 <div className="row gy-4">
                   {author.map((auth) => (
-                    <div className="col-md-3">
+                    <Link
+                      // data-category-id={auth.id}
+                      onClick={() => handleAuthor(auth.id)}
+                      to="/infoAuthor"
+                      className="col-md-3"
+                    >
                       <CatCard>
                         <img
                           height="224px"
@@ -109,7 +121,7 @@ export const AuthCategorys = () => {
                           <CardBottomImg src={cardBottom} alt="" />
                         </CardBody>
                       </CatCard>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               ) : (

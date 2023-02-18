@@ -2,24 +2,19 @@ import { Containers } from "../Home/Header/header.style";
 import {
   AuthTitle,
   AuthWrap,
-  CardBody,
-  CardBottomImg,
-  CardDesc,
-  CardTitle,
-  CardTopImg,
-  CatCard,
+  BookAuthorName,
+  BookImg,
+  BookTitleName,
   TabWrap,
 } from "./book.style";
 import "../AuthorCategory/category.css";
-import cardTop from "../../assets/img/card-top.svg";
-import cardBottom from "../../assets/img/card-bottom.svg";
 import { HeroPage } from "../Home/Hero/HeroPage";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const BooksPage = () => {
   const [genre, setGenre] = useState([]);
-  const [author, setAuthor] = useState([]);
+  const [book, setBook] = useState([]);
   const [genresId, setGenreId] = useState(1);
 
   const getGenre = async () => {
@@ -33,9 +28,10 @@ export const BooksPage = () => {
 
   const getGenreAuthor = async (id) => {
     const data = await axios.get(`http://localhost:5000/book/genreId/${id}`);
-    setAuthor(data.data);
-    console.log(data);
+    setBook(data.data);
+    console.log(data.data);
   };
+  
 
   useEffect(() => {
     getGenreAuthor(1);
@@ -87,28 +83,18 @@ export const BooksPage = () => {
               role="tabpanel"
               aria-labelledby={"ex1-tabs-" + `${genresId}}`}
             >
-              {author.length ? (
+              {book.length ? (
                 <div className="row gy-4">
-                  {author.map((auth) => (
-                    <div className="col-md-3">
-                      <CatCard>
-                        <img
-                          height="224px"
-                          width="295px"
-                          src={`http://localhost:5000/${auth.image}`}
+                  {book.map((item) => (
+                    <div className="col-md-2 text-start">
+                      <div>
+                        <BookImg
+                          src={`http://localhost:5000/${item.image}`}
                           alt=""
                         />
-                        <CardBody>
-                          <CardTopImg src={cardTop} alt="" />
-                          <CardTitle>
-                            {auth.first_name} {auth.last_name}{" "}
-                          </CardTitle>
-                          <CardDesc>
-                            {auth.date_of_birth}-{auth.date_of_death}
-                          </CardDesc>
-                          <CardBottomImg src={cardBottom} alt="" />
-                        </CardBody>
-                      </CatCard>
+                        <BookTitleName>{item.title}</BookTitleName>
+                        <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
+                      </div>
                     </div>
                   ))}
                 </div>
