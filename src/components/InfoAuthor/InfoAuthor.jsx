@@ -1,4 +1,4 @@
-import { HeaderPage } from "../Home/Header/HeaderPage";
+import { Header } from "../Home/Header/Header";
 import book from "../../assets/img/book.png";
 import info from "../../assets/img/infoauthor.png";
 import { Containers } from "../Home/Header/header.style";
@@ -36,7 +36,7 @@ export const InfoAuth = () => {
     <>
       <Containers>
         {" "}
-        <HeaderPage />
+        <Header />
         <div className="d-flex gap-5">
           <div>
             <InfoAuthImg src={info} alt="" />

@@ -1,9 +1,21 @@
 // import { Box } from "../../../app.style";
 import { Containers, HeaderBrand } from "./header.style";
 import { Link, NavLink, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "../../../redux/Users/userAction";
+import { useEffect } from "react";
+import axios from "axios";
 
-export const HeaderPage = () => {
-  // const { page } = useParams();
+export const Header = () => {
+  const user = useSelector((item) => item.user.user);
+  const dispatch = useDispatch();
+  dispatch(setUser(JSON.parse(localStorage.getItem("user"))));
+  // console.log(user);
+  const userInfo = JSON.parse(user);
+  console.log(userInfo.email);
+
+  
+
   return (
     <>
       <header>
@@ -94,14 +106,17 @@ export const HeaderPage = () => {
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img
+                    <button className="btn btn-secondary rounded-circle px-1 py-2">
+                      {userInfo.first_name.at(0)} . {userInfo.last_name.at(0)}
+                    </button>
+                    {/* <img
                       src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
                       className="rounded-circle"
                       height={35}
                       width={35}
                       alt="Black and White Portrait of a Man"
                       loading="lazy"
-                    />
+                    /> */}
                   </a>
                   <ul
                     className="dropdown-menu dropdown-menu-end"

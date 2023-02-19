@@ -20,6 +20,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../Api/api";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../redux/Token/tokenAction";
+import { setUser } from "../../redux/Users/userAction";
 
 export const SignUp = () => {
   let firstRef = useRef();
@@ -55,16 +56,18 @@ export const SignUp = () => {
   // };
 
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const users = async (value) => {
     const data = await api.userRegister(value);
     if (data.status === 201) {
       localStorage.setItem("token", data.data.token);
       localStorage.setItem("user", JSON.stringify(data.config.data));
+      console.log(data.data);
       dispatch(setToken(data.data.token));
-      console.log(dispatch(setToken(data.data.token)));
-      navigate('/')
+      dispatch(setUser(JSON.stringify(data.config.data)));
+
+      navigate("/");
     }
   };
 

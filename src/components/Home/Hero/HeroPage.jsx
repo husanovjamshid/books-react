@@ -1,4 +1,4 @@
-import { HeaderPage } from "../Header/HeaderPage";
+import { Header } from "../Header/Header";
 // import { Books } from "../../Books/Books";
 import SimpleSlider from "../../MainPage/MainPage";
 // import { Route, Routes } from "react-router-dom";
@@ -7,7 +7,7 @@ import SimpleSlider from "../../MainPage/MainPage";
 export const HeroPage = () => {
   return (
     <>
-      <HeaderPage />
+      <Header />
       <SimpleSlider />
     </>
   );

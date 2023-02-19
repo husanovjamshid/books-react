@@ -7,37 +7,37 @@ export const ProfileHeader = () => {
     <>
       <div className="row m-0">
         <div
-          style={{ background: "#F3F6F9", cursor: "pointer" }}
+          style={{ background: "#F3F6F9", cursor: "pointer",padding: '8px 15px' }}
           className="col-md-4"
         >
-          <Link to="profil">
-            <div className="d-flex gap-3 align-items-center ps-4 py-4">
+          <NavLink to="">
+            <div className="d-flex gap-3 align-items-center">
               <ProfilNumber>1</ProfilNumber>
               <ProfilDesc>Profile</ProfilDesc>
             </div>
-          </Link>
+          </NavLink>
         </div>
         <div
-          style={{ background: "#F3F6F9", cursor: "pointer" }}
+          style={{ background: "#F3F6F9", cursor: "pointer",padding: '8px 15px' }}
           className="col-md-4"
         >
-          <Link to="security">
-            <div className="d-flex gap-3 align-items-center ps-4 pt-4">
+          <NavLink to="security">
+            <div className="d-flex gap-3 align-items-center ">
               <ProfilNumber>2</ProfilNumber>
               <ProfilDesc>Security</ProfilDesc>
             </div>
-          </Link>
+          </NavLink>
         </div>
         <div
-          style={{ background: "#F3F6F9", cursor: "pointer" }}
+          style={{ background: "#F3F6F9", cursor: "pointer",padding: '8px 15px' }}
           className="col-md-4"
         >
-          <Link to="setting">
-            <div className="d-flex gap-3 align-items-center ps-4 pt-4">
+          <NavLink to="setting">
+            <div className="d-flex gap-3 align-items-center ">
               <ProfilNumber>4</ProfilNumber>
               <ProfilDesc>Settings</ProfilDesc>
             </div>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </>

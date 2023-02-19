@@ -4,7 +4,7 @@ import { AuthCategorys } from "../../components/AuthorCategory/Category";
 import { AddAuthors } from "../AddAuthor/AddAuthorPage";
 import { AddBook } from "../AddBook/AddBook";
 import { InfoAuth } from "../../components/InfoAuthor/InfoAuthor";
-import { ProfilHome } from "../Profil/ProfilHome/ProfilHome";
+import { ProfilHome } from "../ProfilPage/ProfilHome/ProfilHome";
 
 export const PrivatePage = () => {
   return (
