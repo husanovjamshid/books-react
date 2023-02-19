@@ -1,8 +1,9 @@
 // import { Box } from "../../../app.style";
 import { Containers, HeaderBrand } from "./header.style";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 
 export const HeaderPage = () => {
+  // const { page } = useParams();
   return (
     <>
       <header>
@@ -107,9 +108,9 @@ export const HeaderPage = () => {
                     aria-labelledby="navbarDropdownMenuAvatar"
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="/profile">
                         Profile
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/AddAuthor">

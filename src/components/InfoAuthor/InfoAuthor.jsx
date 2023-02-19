@@ -21,31 +21,17 @@ import {
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { useEffect } from "react";
 
 export const InfoAuth = () => {
-  const getId = useSelector((item) => item.userId.userId);
-  console.log(getId);
+  const getAuthor = useSelector((item) => item.arr.arr);
+  console.log(getAuthor);
+  // const token = useSelector((token) => token.token.token);
 
-  // GET TOKEN
-  const token = useSelector((token) => token.token.token);
-
-  // GET AUTHOR
   // axios
-  //   .get(`http://localhost:5000/author/authorId/${getId}`, {
+  //   .get(`http://localhost:5000/author/authorId/${getAuthor}`, {
   //     headers: { Authorization: token },
   //   })
   //   .then((data) => console.log(data.data));
-  // const infoAuth = async () => {
-  //   const data = await axios.get(
-  //     `http://localhost:5000/author/authorId/${getId}`,
-  //     { headers: { Authorization: token } }
-  //   );
-  //   console.log(data.data);
-  // };
-  // useEffect(() => {
-  //   infoAuth();
-  // }, []);
   return (
     <>
       <Containers>

@@ -17,6 +17,7 @@ import "./fileupload.css";
 import addFile from "../../assets/img/add-file.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../../redux/Token/tokenAction";
+import { Containers } from "../../components/Home/Header/header.style";
 
 export const AddAuthors = () => {
   let firstRef = useRef();

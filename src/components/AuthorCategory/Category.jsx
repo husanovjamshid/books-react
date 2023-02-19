@@ -17,7 +17,7 @@ import { HeroPage } from "../Home/Hero/HeroPage";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AuthId } from "../../redux/AuthorId/authorAction";
 
 export const AuthCategorys = () => {
@@ -48,9 +48,17 @@ export const AuthCategorys = () => {
   };
 
   // AUTHOR ID
-  const dispatch = useDispatch();
+  // const [userId, setUserId] = useState();
+
+  // GET TOKEN
+
+  // GET AUTHOR
+  // const dispatch = useDispatch();
   const handleAuthor = (id) => {
-    dispatch(AuthId(id));
+    // setUserId(id);
+    console.log(id);
+
+    // dispatch(AuthId(id));
   };
 
   return (
@@ -90,38 +98,38 @@ export const AuthCategorys = () => {
           <div className="tab-content" id="ex1-content">
             <div
               className="tab-pane fade show active"
-              id={"ex1-tabs-" + `${genresId}}`}
+              id={"#ex1-tabs-" + `${genresId}}`}
               role="tabpanel"
-              aria-labelledby={"ex1-tabs-" + `${genresId}}`}
+              aria-labelledby={"#ex1-tabs-" + `${genresId}}`}
             >
               {author.length ? (
                 <div className="row gy-4">
                   {author.map((auth) => (
-                    <Link
-                      // data-category-id={auth.id}
-                      onClick={() => handleAuthor(auth.id)}
-                      to="/infoAuthor"
+                    <div
                       className="col-md-3"
+                      onClick={() => handleAuthor(auth.id)}
                     >
-                      <CatCard>
-                        <img
-                          height="224px"
-                          width="295px"
-                          src={`http://localhost:5000/${auth.image}`}
-                          alt=""
-                        />
-                        <CardBody>
-                          <CardTopImg src={cardTop} alt="" />
-                          <CardTitle>
-                            {auth.first_name} {auth.last_name}{" "}
-                          </CardTitle>
-                          <CardDesc>
-                            {auth.date_of_birth}-{auth.date_of_death}
-                          </CardDesc>
-                          <CardBottomImg src={cardBottom} alt="" />
-                        </CardBody>
-                      </CatCard>
-                    </Link>
+                      <Link to="/">
+                        <CatCard>
+                          <img
+                            height="224px"
+                            width="295px"
+                            src={`http://localhost:5000/${auth.image}`}
+                            alt=""
+                          />
+                          <CardBody>
+                            <CardTopImg src={cardTop} alt="" />
+                            <CardTitle>
+                              {auth.first_name} {auth.last_name}{" "}
+                            </CardTitle>
+                            <CardDesc>
+                              {auth.date_of_birth}-{auth.date_of_death}
+                            </CardDesc>
+                            <CardBottomImg src={cardBottom} alt="" />
+                          </CardBody>
+                        </CatCard>
+                      </Link>
+                    </div>
                   ))}
                 </div>
               ) : (
