@@ -33,20 +33,20 @@ export const Security = () => {
       currentPassword: currentPassword.current.value,
       newPassword: newPassword.current.value,
     });
-    // axios
-    //   .put(
-    //     "http://localhost:5000/user/secutiry",
-    //     {
-    //       email: email.current.value,
-    //       currentPassword: currentPassword.current.value,
-    //       newPassword: newPassword.current.value,
-    //     },
-    //     {
-    //       headers: { Authorization: token },
-    //     }
-    //   )
-    //   .then((data) => console.log(data))
-    //   .catch((err) => console.log(err));
+    axios
+      .put(
+        "http://localhost:5000/user/security",
+        {
+          email: email.current.value,
+          currentPassword: currentPassword.current.value,
+          newPassword: newPassword.current.value,
+        },
+        {
+          headers: { Authorization: token },
+        }
+      )
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
   };
 
   return (
