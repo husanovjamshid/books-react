@@ -60,19 +60,19 @@ export const AuthCategorys = () => {
   };
 
   const searchAuthorName = useSelector((item) => item.searchName.searchName);
-  useEffect(() => {
-    console.log(searchAuthorName);
-  }, []);
+  useEffect(() => {}, []);
 
   const [search, setSearch] = useState([]);
+
+
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/author/search?author=amir`)
+      .get(`http://localhost:5000/author/search?author=${searchAuthorName}`)
       .then((data) => {
         console.log(data.data);
         setSearch(data.data);
       });
-  }, []);
+  }, [searchAuthorName]);
 
   return (
     <Containers>

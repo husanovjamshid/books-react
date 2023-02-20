@@ -15,12 +15,11 @@ export const SearchPage = () => {
   const authorName = useRef();
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
 
   const handleSearch = (evt) => {
     evt.preventDefault();
     dispatch(setSearch(authorName.current.value));
-    navigate("/");
+    // navigate("/");
     authorName.current.value = "";
   };
   return (
