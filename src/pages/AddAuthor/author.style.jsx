@@ -46,6 +46,7 @@ export const BookWrap = styled.div`
 export const BookForm = styled.form`
   width: 100%;
   max-width: 330px;
+  margin-top: 20px;
 `;
 
 export const BookTitle = styled.h3`

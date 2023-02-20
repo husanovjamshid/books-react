@@ -13,7 +13,6 @@ export const Header = () => {
   const token = useSelector((item) => item.token.token);
   const dispatch = useDispatch();
 
-
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -70,7 +69,7 @@ export const Header = () => {
                               fontFamily: "Poppins",
                               fontStyle: "normal",
                               fontWeight: "400",
-                              fontSize: "16px",
+                              fontSize: "15px",
                               lineHeight: "144.4%",
                               color: "#0D0D0D",
                             }
@@ -78,7 +77,7 @@ export const Header = () => {
                               fontFamily: "Poppins",
                               fontStyle: "normal",
                               fontWeight: "400",
-                              fontSize: "16px",
+                              fontSize: "15px",
                               lineHeight: "144.4%",
                               color: "red",
                             }
@@ -96,7 +95,7 @@ export const Header = () => {
                               fontFamily: "Poppins",
                               fontStyle: "normal",
                               fontWeight: "400",
-                              fontSize: "16px",
+                              fontSize: "15px",
                               lineHeight: "144.4%",
                               color: "#0D0D0D",
                             }
@@ -104,7 +103,7 @@ export const Header = () => {
                               fontFamily: "Poppins",
                               fontStyle: "normal",
                               fontWeight: "400",
-                              fontSize: "16px",
+                              fontSize: "15px",
                               lineHeight: "144.4%",
                               color: "red",
                             }
@@ -125,18 +124,18 @@ export const Header = () => {
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    
-                      <img
-                        src={
-                          users.image ? `http://localhost:5000/${users.image}` : `${avatar}`
-                        }
-                        className="rounded-circle"
-                        height={35}
-                        width={35}
-                        alt="Black and White Portrait of a Man"
-                        loading="lazy"
-                      />
-                   
+                    <img
+                      src={
+                        users.image
+                          ? `http://localhost:5000/${users.image}`
+                          : `${avatar}`
+                      }
+                      className="rounded-circle"
+                      height={35}
+                      width={35}
+                      alt="Black and White Portrait of a Man"
+                      loading="lazy"
+                    />
                   </a>
                   <ul
                     className="dropdown-menu dropdown-menu-end"

@@ -112,5 +112,5 @@ export const AuthorNovel = styled.p`
 
 export const BooksList = styled.div`
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 `;

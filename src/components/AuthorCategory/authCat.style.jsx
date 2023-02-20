@@ -23,6 +23,7 @@ export const CatCard = styled.div`
   border-radius: 22px;
   width: 100%;
   max-width: 295px;
+  max-height: 393px;
   text-align: start;
   overflow: hidden;
 `;

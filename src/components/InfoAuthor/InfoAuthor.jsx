@@ -4,13 +4,6 @@ import { Containers } from "../Home/Header/header.style";
 import {
   AuthInfoDesc,
   AuthName,
-  AuthorNovel,
-  BookAuthorName,
-  BookImg,
-  BookItem,
-  BookList,
-  BooksList,
-  BookTitleName,
   InfoAuthBirth,
   InfoAuthImg,
   InfoAuthorBox,
@@ -21,6 +14,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import MultipleItems from "./bookCarousel";
 
 export const InfoAuth = () => {
   const [authorInfo, setAuthorInfo] = useState([]);
@@ -33,7 +27,19 @@ export const InfoAuth = () => {
       .get(`http://localhost:5000/author/authorId/${getAuthor}`, {
         headers: { Authorization: token },
       })
-      .then((data) => setAuthorInfo(data.data));
+      .then((data) => {
+        setAuthorInfo(data.data);
+        // console.log(data.data);
+      });
+  }, [getAuthor]);
+
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/author/books/${getAuthor}`, {
+        headers: { Authorization: token },
+      })
+      .then((data) => setBooks(data.data));
   }, [getAuthor]);
   return (
     <>
@@ -68,23 +74,7 @@ export const InfoAuth = () => {
             </div>
           </InfoAuthorBox>
         </div>
-        <BooksList>
-          <div className="d-flex justify-content-between ">
-            <AuthorNovel>Asarlari</AuthorNovel>
-            <Link to="/books">Barchasini ko’rish</Link>
-          </div>
-          <BookList>
-            <BookItem>
-              <NavLink to="/books">
-                <div className="books">
-                  <BookImg src={book} alt="" />
-                  <BookTitleName>Dunyoning ishlari</BookTitleName>
-                  <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-                </div>
-              </NavLink>
-            </BookItem>
-          </BookList>
-        </BooksList>
+        <MultipleItems  />
       </Containers>
     </>
   );

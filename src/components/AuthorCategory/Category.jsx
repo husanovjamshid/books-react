@@ -132,7 +132,7 @@ export const AuthCategorys = () => {
                   ))}
                 </div>
               ) : (
-                ""
+                <h2>Author's not found</h2>
               )}
             </div>
           </div>

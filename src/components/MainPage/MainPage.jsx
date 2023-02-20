@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,17 +13,24 @@ import {
   MainButton,
 } from "./main.style";
 import "./main.css";
-import search from "../../assets/img/search.svg";
+import axios from "axios";
+import { SearchPage } from "./SearchPage/SearchPage";
 
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      // speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      autoplay: true,
+      speed: 2000,
+      autoplaySpeed: 5000,
     };
+
+    
+
     return (
       <Containers>
         <div className="position-relative">
@@ -74,20 +81,7 @@ export default class SimpleSlider extends Component {
             </div>
           </Slider>
 
-          <MainWrapper>
-            <MainInputTitle>Qidirish</MainInputTitle>
-            <form>
-              <div className="d-flex gap-3">
-                <MainInput
-                  type="text"
-                  placeholder="Adiblar, kitoblar, audiolar, maqolalar..."
-                />
-                <MainButton>
-                  <img src={search} alt="" /> Izlash
-                </MainButton>
-              </div>
-            </form>
-          </MainWrapper>
+          <SearchPage />
         </div>
       </Containers>
     );

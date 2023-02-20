@@ -18,6 +18,7 @@ import addFile from "../../assets/img/add-file.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../../redux/Token/tokenAction";
 import { Containers } from "../../components/Home/Header/header.style";
+import { Link } from "react-router-dom";
 
 export const AddAuthors = () => {
   let firstRef = useRef();
@@ -101,6 +102,7 @@ export const AddAuthors = () => {
           </div>
         </BookBg>
         <BookContent>
+          <Link className="btn btn-secondary rounded-pill mt-3 ms-3 position-absolute" to="/" >Back</Link>
           <BookWrap>
             <BookForm
               onSubmit={handleSubmit}

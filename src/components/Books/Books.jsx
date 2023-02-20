@@ -112,7 +112,8 @@ export const BooksPage = () => {
                   ))}
                 </div>
               ) : (
-                ""
+                <h2>Book's not found</h2>
+
               )}
             </div>
           </div>

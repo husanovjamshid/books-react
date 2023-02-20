@@ -29,6 +29,7 @@ import { Link, NavLink } from "react-router-dom";
 import substract from "../../assets/img/Subtract.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import MultipleItems from "../InfoAuthor/bookCarousel";
 
 export const InfoBook = () => {
   const [getBook, setBook] = useState([]);
@@ -78,23 +79,7 @@ export const InfoBook = () => {
           <AuthInfoDesc>{getBook.description}</AuthInfoDesc>
         </InfoAuthorBox>
       </div>
-      <BooksList>
-        <div className="d-flex justify-content-between ">
-          <AuthorNovel>Asarlari</AuthorNovel>
-          <Link to="/books">Barchasini ko’rish</Link>
-        </div>
-        <BookList>
-          <BookItem>
-            <NavLink to="/books">
-              <div className="books">
-                <BookImg src={book} alt="" />
-                <BookTitleName>Dunyoning ishlari</BookTitleName>
-                <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
-            </NavLink>
-          </BookItem>
-        </BookList>
-      </BooksList>
+      <MultipleItems />
     </Containers>
   );
 };

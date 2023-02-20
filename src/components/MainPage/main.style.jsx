@@ -49,7 +49,7 @@ export const MainInput = styled.input`
   background: #f5f5f5;
   border-radius: 15px;
   outline: none;
-  border: none;
+  border: 1px solid transparent;
 
   &:placeholder-shown {
     font-family: "Poppins";
