@@ -107,7 +107,7 @@ export const SignUp = () => {
           <RegisterImg src={RegisterBG} alt="" />
         </RegisterBg>
         <RegisterContent>
-          <RegisterWrap>
+          <RegisterWrap className="mt-5">
             {/* <Formik
               validationSchema={validateSchema}
               initialValues={initialValues}

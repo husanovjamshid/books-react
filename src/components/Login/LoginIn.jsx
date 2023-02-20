@@ -92,7 +92,7 @@ export const SignIn = () => {
           <LoginImg src={LoginBG} alt="" />
         </LoginBg>
         <LoginContent>
-          <LoginWrap>
+          <LoginWrap className="mt-5">
             {/* <Formik
               validationSchema={validateSchema}
               initialValues={initialValues}
