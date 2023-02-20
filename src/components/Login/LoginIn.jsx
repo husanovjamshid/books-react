@@ -16,7 +16,10 @@ import axios from "axios";
 import { useRef } from "react";
 // import { Formik, FieldInput, ErrorMessage, Form } from "formik";
 // import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../redux/Token/tokenAction";
+import { setUser } from "../../redux/Users/userAction";
 
 export const SignIn = () => {
   let emailRef = useRef();
@@ -44,15 +47,26 @@ export const SignIn = () => {
   //   emailRef: "",
   //   passwordRef: "",
   // };
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSubmitLogin = (evt) => {
-    evt.preventDefault( );
+    evt.preventDefault();
     axios
-      .post("http://books.ogaw.uz/user/login", {
+      .post("http://localhost:5000/user/login", {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       })
-      .then((data) => console.log(data))
+      .then((data) => {
+        if (data.status === 201) {
+          localStorage.setItem("token", data.data.token);
+          localStorage.setItem("user", JSON.stringify(data.config.data));
+          console.log(data.data);
+          dispatch(setToken(data.data.token));
+          dispatch(setUser(JSON.stringify(data.config.data)));
+
+          navigate("/");
+        }
+      })
       .catch((err) => console.log(err));
 
     // axios.get("http://localhost:5000/genre").then((data) => console.log(data)).catch(err => console.log(err));
@@ -89,7 +103,7 @@ export const SignIn = () => {
             >
               <LoginTitle>Sign in</LoginTitle>
               <LoginDesc>
-              Do not you have an account? {" "}
+                Do not you have an account?{" "}
                 <Link
                   style={{
                     fontFamily: "Roboto",

@@ -1,5 +1,4 @@
 import { Public } from "./pages/Public/Public";
-// import { globalStyled } from "./globalStyled.js";
 import { PrivatePage } from "./pages/Private/PrivatePage";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "./redux/Token/tokenAction";

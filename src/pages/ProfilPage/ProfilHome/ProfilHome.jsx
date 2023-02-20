@@ -8,14 +8,7 @@ import { Security } from "../Security/Security";
 import { Setting } from "../Setting/Setting";
 
 export const ProfilHome = () => {
-  // const token = useSelector((item) => item.token.token);
-  // const dispatch = useDispatch();
-  // dispatch(setToken(localStorage.getItem("token") || ""));
-  // axios
-  //   .get("http://localhost:5000/user/me", {
-  //     headers: { Authorization: token },
-  //   })
-  //   .then((data) => console.log(data));
+  
 
   return (
     <>

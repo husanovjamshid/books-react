@@ -1,20 +1,37 @@
 // import { Box } from "../../../app.style";
 import { Containers, HeaderBrand } from "./header.style";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../../redux/Users/userAction";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import avatar from "../../../assets/img/avloniy.png";
+
 import axios from "axios";
+import { setToken } from "../../../redux/Token/tokenAction";
 
 export const Header = () => {
-  const user = useSelector((item) => item.user.user);
+  const token = useSelector((item) => item.token.token);
   const dispatch = useDispatch();
-  dispatch(setUser(JSON.parse(localStorage.getItem("user"))));
-  // console.log(user);
-  const userInfo = JSON.parse(user);
-  console.log(userInfo.email);
 
-  
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(setToken(localStorage.removeItem("token")));
+    // dispatch(setUser(localStorage.removeItem("user")));
+
+    navigate("/");
+  };
+
+  const [users, setUsers] = useState([]);
+  dispatch(setToken(localStorage.getItem("token") || ""));
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/user/me", {
+        headers: { Authorization: token },
+      })
+      .then((data) => setUsers(data.data));
+  }, []);
 
   return (
     <>
@@ -37,9 +54,11 @@ export const Header = () => {
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
               >
-                <HeaderBrand className="navbar-brand m-0 mt-lg-0" href="#">
-                  Badiiyat
-                </HeaderBrand>
+                <Link to="/">
+                  <HeaderBrand className="navbar-brand m-0 mt-lg-0">
+                    Badiiyat
+                  </HeaderBrand>
+                </Link>
               </div>
               <div className="d-flex gap-3 align-items-center">
                 <ul className="d-flex list-unstyled gap-3 m-0 mb-lg-0">
@@ -106,17 +125,18 @@ export const Header = () => {
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <button className="btn btn-secondary rounded-circle px-1 py-2">
-                      {userInfo.first_name.at(0)} . {userInfo.last_name.at(0)}
-                    </button>
-                    {/* <img
-                      src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                      className="rounded-circle"
-                      height={35}
-                      width={35}
-                      alt="Black and White Portrait of a Man"
-                      loading="lazy"
-                    /> */}
+                    
+                      <img
+                        src={
+                          users.image ? `http://localhost:5000/${users.image}` : `${avatar}`
+                        }
+                        className="rounded-circle"
+                        height={35}
+                        width={35}
+                        alt="Black and White Portrait of a Man"
+                        loading="lazy"
+                      />
+                   
                   </a>
                   <ul
                     className="dropdown-menu dropdown-menu-end"
@@ -138,9 +158,13 @@ export const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <p
+                        style={{ cursor: "pointer" }}
+                        onClick={handleLogout}
+                        className="dropdown-item"
+                      >
                         Log out
-                      </a>
+                      </p>
                     </li>
                   </ul>
                 </div>

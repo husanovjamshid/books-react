@@ -11,6 +11,9 @@ import "../AuthorCategory/category.css";
 import { HeroPage } from "../Home/Hero/HeroPage";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { BookId } from "../../redux/BookId/bookAciton";
 
 export const BooksPage = () => {
   const [genre, setGenre] = useState([]);
@@ -31,7 +34,6 @@ export const BooksPage = () => {
     setBook(data.data);
     console.log(data.data);
   };
-  
 
   useEffect(() => {
     getGenreAuthor(1);
@@ -40,6 +42,12 @@ export const BooksPage = () => {
   const handleGenre = (genreId) => {
     getGenreAuthor(genreId);
     setGenreId(genreId);
+  };
+
+  const dispatch = useDispatch();
+  const handleBook = (id) => {
+    // console.log(id);
+    dispatch(BookId(id));
   };
 
   return (
@@ -86,15 +94,20 @@ export const BooksPage = () => {
               {book.length ? (
                 <div className="row gy-4">
                   {book.map((item) => (
-                    <div className="col-md-2 text-start">
-                      <div>
-                        <BookImg
-                          src={`http://localhost:5000/${item.image}`}
-                          alt=""
-                        />
-                        <BookTitleName>{item.title}</BookTitleName>
-                        <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-                      </div>
+                    <div
+                      onClick={() => handleBook(item.id)}
+                      className="col-md-2 text-start"
+                    >
+                      <Link to="/infoBook">
+                        <div>
+                          <BookImg
+                            src={`http://localhost:5000/${item.image}`}
+                            alt=""
+                          />
+                          <BookTitleName>{item.title}</BookTitleName>
+                          <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
+                        </div>
+                      </Link>
                     </div>
                   ))}
                 </div>

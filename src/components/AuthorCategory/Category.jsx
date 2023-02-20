@@ -53,12 +53,11 @@ export const AuthCategorys = () => {
   // GET TOKEN
 
   // GET AUTHOR
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const handleAuthor = (id) => {
     // setUserId(id);
-    console.log(id);
 
-    // dispatch(AuthId(id));
+    dispatch(AuthId(id));
   };
 
   return (
@@ -109,7 +108,7 @@ export const AuthCategorys = () => {
                       className="col-md-3"
                       onClick={() => handleAuthor(auth.id)}
                     >
-                      <Link to="/">
+                      <Link to="/infoAuthor">
                         <CatCard>
                           <img
                             height="224px"
