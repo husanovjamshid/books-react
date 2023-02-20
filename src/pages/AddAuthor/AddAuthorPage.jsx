@@ -47,7 +47,7 @@ export const AddAuthors = () => {
     formData.append("image", imgRef.current.files[0]);
 
     axios
-      .post("http://books.ogaw.uz/author", formData, {
+      .post("https://books.ogaw.uz/author", formData, {
         headers: { Authorization: token },
       })
       .then((data) => console.log(data));

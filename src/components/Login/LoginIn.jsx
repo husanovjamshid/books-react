@@ -33,7 +33,7 @@ export const SignIn = () => {
 
   // const LoginRender = async () => {
   //   axios
-  //     .post("http://books.ogaw.uz/user/Login", {
+  //     .post("https://books.ogaw.uz/user/Login", {
   //       first_name: firstRef.current.value,
   //       last_name: lastRef.current.value,
   //       phone: phoneRef.current.value,
@@ -52,7 +52,7 @@ export const SignIn = () => {
   const handleSubmitLogin = (evt) => {
     evt.preventDefault();
     axios
-      .post("http://books.ogaw.uz/user/login", {
+      .post("https://books.ogaw.uz/user/login", {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       })
@@ -69,7 +69,7 @@ export const SignIn = () => {
       })
       .catch((err) => console.log(err));
 
-    // axios.get("http://books.ogaw.uz/genre").then((data) => console.log(data)).catch(err => console.log(err));
+    // axios.get("https://books.ogaw.uz/genre").then((data) => console.log(data)).catch(err => console.log(err));
   };
 
   // const validateSchema = Yup.object({

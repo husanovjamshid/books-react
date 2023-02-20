@@ -25,7 +25,7 @@ export const Profil = () => {
   const dispatch = useDispatch();
   dispatch(setToken(localStorage.getItem("token") || ""));
   axios
-    .get("http://books.ogaw.uz/user/me", {
+    .get("https://books.ogaw.uz/user/me", {
       headers: { Authorization: token },
     })
     .then((data) => setUser(data.data));
@@ -45,7 +45,7 @@ export const Profil = () => {
     formData.append("image", image.current.files[0]);
 
     axios
-      .put("http://books.ogaw.uz/user/account", formData, {
+      .put("https://books.ogaw.uz/user/account", formData, {
         headers: { Authorization: token },
       })
       .then((data) => console.log(data));
@@ -60,7 +60,7 @@ export const Profil = () => {
           <ProfilImg
           className="w-100"
             src={
-              user.image ? `http://books.ogaw.uz/${user.image}` : `${avatar}`
+              user.image ? `https://books.ogaw.uz/${user.image}` : `${avatar}`
             }
             alt=""
           />
