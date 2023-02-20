@@ -85,3 +85,7 @@ export const FormLine = styled.span`
   max-width: 709px;
   background: #ecf0f3;
 `;
+
+export const ThemeInput = styled.input``;
+export const ThemeLabel = styled.label``;
+

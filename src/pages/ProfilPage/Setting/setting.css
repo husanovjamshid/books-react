@@ -1,0 +1,37 @@
+.cont {
+  height: 30px;
+  width: 87px;
+  background: #f3f6f9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.theme {
+  display: none;
+}
+
+#btn:checked ~ .cont {
+  background: whitesmoke;
+  /* box-shadow: 0 0 0 1200px #202430; */
+}
+
+.cont:before {
+  content: "";
+  margin: 0 10px;
+  height: 25px;
+  width: 25px;
+  background: #3699ff;
+  border-radius: 80px;
+  transition: 0.5s;
+}
+
+#btn:checked ~ .cont:before {
+  transform: translateX(180%);
+  background: #202430;
+}

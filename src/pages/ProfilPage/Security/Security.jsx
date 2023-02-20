@@ -28,16 +28,25 @@ export const Security = () => {
 
   const handleSecurity = (evt) => {
     evt.preventDefault();
-    const securityForm = {
+    console.log({
       email: email.current.value,
       currentPassword: currentPassword.current.value,
       newPassword: newPassword.current.value,
-    };
-    axios
-      .put("http://localhost:5000/user/secutiry", securityForm, {
-        headers: { Authorization: token },
-      })
-      .then((data) => console.log(data));
+    });
+    // axios
+    //   .put(
+    //     "http://localhost:5000/user/secutiry",
+    //     {
+    //       email: email.current.value,
+    //       currentPassword: currentPassword.current.value,
+    //       newPassword: newPassword.current.value,
+    //     },
+    //     {
+    //       headers: { Authorization: token },
+    //     }
+    //   )
+    //   .then((data) => console.log(data))
+    //   .catch((err) => console.log(err));
   };
 
   return (

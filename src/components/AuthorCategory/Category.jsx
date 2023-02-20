@@ -45,6 +45,7 @@ export const AuthCategorys = () => {
   const handleGenre = (genreId) => {
     getGenreAuthor(genreId);
     setGenreId(genreId);
+    setSearch("");
   };
 
   // AUTHOR ID
@@ -55,10 +56,23 @@ export const AuthCategorys = () => {
   // GET AUTHOR
   const dispatch = useDispatch();
   const handleAuthor = (id) => {
-    // setUserId(id);
-
     dispatch(AuthId(id));
   };
+
+  const searchAuthorName = useSelector((item) => item.searchName.searchName);
+  useEffect(() => {
+    console.log(searchAuthorName);
+  }, []);
+
+  const [search, setSearch] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/author/search?author=amir`)
+      .then((data) => {
+        console.log(data.data);
+        setSearch(data.data);
+      });
+  }, []);
 
   return (
     <Containers>
@@ -101,7 +115,37 @@ export const AuthCategorys = () => {
               role="tabpanel"
               aria-labelledby={"#ex1-tabs-" + `${genresId}}`}
             >
-              {author.length ? (
+              {search.length ? (
+                <div className="row gy-4">
+                  {search.map((auth) => (
+                    <div
+                      className="col-md-3"
+                      onClick={() => handleAuthor(auth.id)}
+                    >
+                      <Link to="/infoAuthor">
+                        <CatCard>
+                          <img
+                            height="224px"
+                            width="295px"
+                            src={`http://localhost:5000/${auth.image}`}
+                            alt=""
+                          />
+                          <CardBody>
+                            <CardTopImg src={cardTop} alt="" />
+                            <CardTitle>
+                              {auth.first_name} {auth.last_name}{" "}
+                            </CardTitle>
+                            <CardDesc>
+                              {auth.date_of_birth}-{auth.date_of_death}
+                            </CardDesc>
+                            <CardBottomImg src={cardBottom} alt="" />
+                          </CardBody>
+                        </CatCard>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              ) : author.length ? (
                 <div className="row gy-4">
                   {author.map((auth) => (
                     <div

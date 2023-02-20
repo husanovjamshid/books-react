@@ -7,18 +7,20 @@ import {
 } from "../main.style";
 import search from "../../../assets/img/search.svg";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setSearch } from "../../../redux/SearchName/searchAction";
+import { useNavigate } from "react-router-dom";
 
 export const SearchPage = () => {
   const authorName = useRef();
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
   const handleSearch = (evt) => {
     evt.preventDefault();
-    console.log(authorName.current.value);
-
-    axios
-      .get(
-        `http://localhost:5000/author/search?author=${authorName.current.value}`
-      )
-      .then((data) => console.log(data));
+    dispatch(setSearch(authorName.current.value));
+    navigate("/");
     authorName.current.value = "";
   };
   return (

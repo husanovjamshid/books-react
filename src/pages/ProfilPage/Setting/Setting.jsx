@@ -7,7 +7,10 @@ import {
   FormNameSetting,
   ProfilFormSetting,
   ProfilTitle,
+  ThemeInput,
+  ThemeLabel,
 } from "./setting.style";
+import './setting.css'
 
 export const Setting = () => {
   return (
@@ -23,6 +26,8 @@ export const Setting = () => {
             <FormNameOption value="eng">English</FormNameOption>
           </FormNameSetting>
           <FormLabel htmlFor="lang">Theme</FormLabel>
+          <ThemeInput className="theme" id="btn" type="checkbox" />
+          <ThemeLabel htmlFor="btn" className="cont"></ThemeLabel>
           <FormLine></FormLine>
           <FormButton>Save Changes</FormButton>
         </form>
