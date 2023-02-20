@@ -47,7 +47,7 @@ export const AddBook = () => {
     formData.append("image", imgRef.current.files[0]);
 
     axios
-      .post("http://localhost:5000/book", formData, {
+      .post("http://books.ogaw.uz/book", formData, {
         headers: { Authorization: token },
       })
       .then((data) => console.log(data));
@@ -55,7 +55,7 @@ export const AddBook = () => {
 
   const [bookAuthor, setBookAuthor] = useState([]);
   const getAuthor = async (id) => {
-    const data = await axios.get(`http://localhost:5000/author/genreId/${id}`);
+    const data = await axios.get(`http://books.ogaw.uz/author/genreId/${id}`);
     setBookAuthor(data.data);
   };
 
@@ -66,7 +66,7 @@ export const AddBook = () => {
 
   const [genre, setGenre] = useState([]);
   const getGenre = async () => {
-    const data = await axios.get("http://localhost:5000/genre");
+    const data = await axios.get("http://books.ogaw.uz/genre");
     setGenre(data.data);
   };
 

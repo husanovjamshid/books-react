@@ -38,7 +38,7 @@ export const InfoBook = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/book/bookId/${bookId}`, {
+      .get(`http://books.ogaw.uz/book/bookId/${bookId}`, {
         headers: { Authorization: token },
       })
       .then((data) => setBook(data.data));
@@ -48,7 +48,7 @@ export const InfoBook = () => {
       <Header />
       <div className="d-flex gap-5 mt-4">
         <div>
-          <InfoAuthImg src={`http://localhost:5000/${getBook.image}`} alt="" />
+          <InfoAuthImg src={`http://books.ogaw.uz/${getBook.image}`} alt="" />
         </div>
         <InfoAuthorBox>
           <AuthName> {getBook.title} </AuthName>
