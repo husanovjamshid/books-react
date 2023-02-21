@@ -17,7 +17,7 @@ export const Security = () => {
   const dispatch = useDispatch();
   dispatch(setToken(localStorage.getItem("token") || ""));
   axios
-    .get("https://books.ogaw.uz/user/me", {
+    .get("http://localhost:5000/user/me", {
       headers: { Authorization: token },
     })
     .then((data) => setUser(data.data));
@@ -35,7 +35,7 @@ export const Security = () => {
     });
     axios
       .put(
-        "https://books.ogaw.uz/user/security",
+        "http://localhost:5000/user/security",
         {
           email: email.current.value,
           currentPassword: currentPassword.current.value,

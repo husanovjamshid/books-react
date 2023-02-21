@@ -24,7 +24,7 @@ export const InfoAuth = () => {
 
   useEffect(() => {
     axios
-      .get(`https://books.ogaw.uz/author/authorId/${getAuthor}`, {
+      .get(`http://localhost:5000/author/authorId/${getAuthor}`, {
         headers: { Authorization: token },
       })
       .then((data) => {
@@ -36,7 +36,7 @@ export const InfoAuth = () => {
   const [books, setBooks] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://books.ogaw.uz/author/books/${getAuthor}`, {
+      .get(`http://localhost:5000/author/books/${getAuthor}`, {
         headers: { Authorization: token },
       })
       .then((data) => setBooks(data.data));
@@ -49,7 +49,7 @@ export const InfoAuth = () => {
         <div className="d-flex gap-5 mt-4">
           <div>
             <InfoAuthImg
-              src={`https://books.ogaw.uz/${authorInfo.image}`}
+              src={`http://localhost:5000/${authorInfo.image}`}
               alt=""
             />
           </div>

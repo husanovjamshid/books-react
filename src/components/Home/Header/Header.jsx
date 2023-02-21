@@ -26,7 +26,7 @@ export const Header = () => {
   dispatch(setToken(localStorage.getItem("token") || ""));
   useEffect(() => {
     axios
-      .get("https://books.ogaw.uz/user/me", {
+      .get("http://localhost:5000/user/me", {
         headers: { Authorization: token },
       })
       .then((data) => setUsers(data.data));
@@ -127,7 +127,7 @@ export const Header = () => {
                     <img
                       src={
                         users.image
-                          ? `https://books.ogaw.uz/${users.image}`
+                          ? `http://localhost:5000/${users.image}`
                           : `${avatar}`
                       }
                       className="rounded-circle"
