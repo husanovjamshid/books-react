@@ -25,7 +25,7 @@ export const Profil = () => {
   const dispatch = useDispatch();
   dispatch(setToken(localStorage.getItem("token") || ""));
   axios
-    .get("http://localhost:5000/user/me", {
+    .get("http://localhost:2020/user/me", {
       headers: { Authorization: token },
     })
     .then((data) => setUser(data.data));
@@ -45,7 +45,7 @@ export const Profil = () => {
     formData.append("image", image.current.files[0]);
 
     axios
-      .put("http://localhost:5000/user/account", formData, {
+      .put("http://localhost:2020/user/account", formData, {
         headers: { Authorization: token },
       })
       .then((data) => console.log(data));
@@ -60,7 +60,7 @@ export const Profil = () => {
           <ProfilImg
           className="w-100"
             src={
-              user.image ? `http://localhost:5000/${user.image}` : `${avatar}`
+              user.image ? `http://localhost:2020/${user.image}` : `${avatar}`
             }
             alt=""
           />

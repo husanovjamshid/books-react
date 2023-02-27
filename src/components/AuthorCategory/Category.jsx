@@ -27,7 +27,7 @@ export const AuthCategorys = () => {
 
   // GET GENRE
   const getGenre = async () => {
-    const data = await axios.get("http://localhost:5000/genre");
+    const data = await axios.get("http://localhost:2020/genre");
     setGenre(data.data);
   };
   useEffect(() => {
@@ -36,7 +36,7 @@ export const AuthCategorys = () => {
 
   // GET AUTHOR GENRES
   const getGenreAuthor = async (id) => {
-    const data = await axios.get(`http://localhost:5000/author/genreId/${id}`);
+    const data = await axios.get(`http://localhost:2020/author/genreId/${id}`);
     setAuthor(data.data);
   };
   useEffect(() => {
@@ -67,7 +67,7 @@ export const AuthCategorys = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/author/search?author=${searchAuthorName}`)
+      .get(`http://localhost:2020/author/search?author=${searchAuthorName}`)
       .then((data) => {
         console.log(data.data);
         setSearch(data.data);
@@ -127,7 +127,7 @@ export const AuthCategorys = () => {
                           <img
                             height="224px"
                             width="295px"
-                            src={`http://localhost:5000/${auth.image}`}
+                            src={`http://localhost:2020/${auth.image}`}
                             alt=""
                           />
                           <CardBody>
@@ -157,7 +157,7 @@ export const AuthCategorys = () => {
                           <img
                             height="224px"
                             width="295px"
-                            src={`http://localhost:5000/${auth.image}`}
+                            src={`http://localhost:2020/${auth.image}`}
                             alt=""
                           />
                           <CardBody>

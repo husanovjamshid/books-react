@@ -33,7 +33,7 @@ export const SignIn = () => {
 
   // const LoginRender = async () => {
   //   axios
-  //     .post("http://localhost:5000/user/Login", {
+  //     .post("http://localhost:2020/user/Login", {
   //       first_name: firstRef.current.value,
   //       last_name: lastRef.current.value,
   //       phone: phoneRef.current.value,
@@ -52,7 +52,7 @@ export const SignIn = () => {
   const handleSubmitLogin = (evt) => {
     evt.preventDefault();
     axios
-      .post("http://localhost:5000/user/login", {
+      .post("http://localhost:2020/user/login", {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       })
@@ -69,7 +69,7 @@ export const SignIn = () => {
       })
       .catch((err) => console.log(err));
 
-    // axios.get("http://localhost:5000/genre").then((data) => console.log(data)).catch(err => console.log(err));
+    // axios.get("http://localhost:2020/genre").then((data) => console.log(data)).catch(err => console.log(err));
   };
 
   // const validateSchema = Yup.object({

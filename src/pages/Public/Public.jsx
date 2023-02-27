@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { SignUp } from "../../components/Register/RegisterIn";
 import { SignIn } from "../../components/Login/LoginIn";
+import { SignUp } from "../../components/Register/RegisterIn";
 
 export const Public = () => {
   return (

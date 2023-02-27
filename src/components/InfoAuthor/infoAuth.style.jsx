@@ -52,11 +52,12 @@ export const InfoAuthBirth = styled.p`
 `;
 
 export const InfoAuthImg = styled.img`
-  max-width: 455px;
+  width: 100%;
   min-width: 455px;
-  max-height: 521px;
-  min-height: 521px;
+  height: 100%;
   border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
 `;
 
 export const BookImg = styled.img`

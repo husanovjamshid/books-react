@@ -37,7 +37,7 @@ export const SignUp = () => {
 
   // const registerRender = async () => {
   //   axios
-  //     .post("http://localhost:5000/user/register", {
+  //     .post("http://localhost:2020/user/register", {
   //       first_name: firstRef.current.value,
   //       last_name: lastRef.current.value,
   //       phone: phoneRef.current.value,
