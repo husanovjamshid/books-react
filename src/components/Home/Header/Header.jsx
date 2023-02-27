@@ -1,5 +1,5 @@
 // import { Box } from "../../../app.style";
-import { Containers, HeaderBrand } from "./header.style";
+import { Containers, HeaderBrand, HeaderImg, ImgWrap } from "./header.style";
 import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../../redux/Users/userAction";
@@ -124,18 +124,18 @@ export const Header = () => {
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img
-                      src={
-                        users.image
-                          ? `http://localhost:2020/${users.image}`
-                          : `${avatar}`
-                      }
-                      className="rounded-circle"
-                      height={35}
-                      width={35}
-                      alt="Black and White Portrait of a Man"
-                      loading="lazy"
-                    />
+                    <ImgWrap>
+                      <HeaderImg
+                        src={
+                          users.image
+                            ? `http://localhost:2020/${users.image}`
+                            : `${avatar}`
+                        }
+                        className="rounded-circle"
+                        alt="Black and White Portrait of a Man"
+                        loading="lazy"
+                      />
+                    </ImgWrap>
                   </a>
                   <ul
                     className="dropdown-menu dropdown-menu-end"

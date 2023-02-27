@@ -20,3 +20,18 @@ export const HeaderBrand = styled.a`
     color: #d1b89d;
   }
 `;
+
+export const HeaderImg = styled.img`
+  max-width: 35px;
+  min-width: 35px;
+  max-height: 35px;
+  min-height: 35px;
+
+`;
+
+export const ImgWrap = styled.div`
+  max-width: 35px;
+  min-width: 35px;
+  max-height: 35px;
+  min-height: 35px;
+`;

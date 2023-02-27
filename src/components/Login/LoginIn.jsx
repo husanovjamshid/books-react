@@ -12,78 +12,43 @@ import {
   FieldInput,
 } from "./signin.style";
 import LoginBG from "../../assets/img/login-bg.png";
-import axios from "axios";
 import { useRef } from "react";
-// import { Formik, FieldInput, ErrorMessage, Form } from "formik";
-// import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../redux/Token/tokenAction";
 import { setUser } from "../../redux/Users/userAction";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { api } from "../../Api/api";
 
 export const SignIn = () => {
   let emailRef = useRef();
   let passwordRef = useRef();
 
-  // const axiosRender = async () => {
-  //   const data = ;
-
-  //   console.log(data);
-  // };
-
-  // const LoginRender = async () => {
-  //   axios
-  //     .post("http://localhost:2020/user/Login", {
-  //       first_name: firstRef.current.value,
-  //       last_name: lastRef.current.value,
-  //       phone: phoneRef.current.value,
-  //       email: emailRef.current.value,
-  //       password: passwordRef.current.value,
-  //     })
-  //     .then((data) => console.log(data))
-  //     .catch((err) => console.log(err));
-  // };
-  // const initialValues = {
-  //   emailRef: "",
-  //   passwordRef: "",
-  // };
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSubmitLogin = (evt) => {
-    evt.preventDefault();
-    axios
-      .post("http://localhost:2020/user/login", {
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
-      })
-      .then((data) => {
-        if (data.status === 201) {
-          localStorage.setItem("token", data.data.token);
-          localStorage.setItem("user", JSON.stringify(data.config.data));
-          console.log(data.data);
-          dispatch(setToken(data.data.token));
-          dispatch(setUser(JSON.stringify(data.config.data)));
 
-          navigate("/");
-        }
-      })
-      .catch((err) => console.log(err));
-
-    // axios.get("http://localhost:2020/genre").then((data) => console.log(data)).catch(err => console.log(err));
+  const users = async (value) => {
+    const data = await api.userLogin(value);
+    if (data.status === 201) {
+      localStorage.setItem("token", data.data.token);
+      localStorage.setItem("user", JSON.stringify(data.config.data));
+      console.log(data.data);
+      dispatch(setToken(data.data.token));
+      dispatch(setUser(JSON.stringify(data.config.data)));
+      navigate("/");
+    }
   };
 
-  // const validateSchema = Yup.object({
-  //   first_name: Yup.string().required("Required firstname!"),
-  //   last_name: Yup.string().required("Required lastname!"),
-  //   phone: Yup.string().required("Required phone!"),
-  //   email: Yup.string()
-  //     .required("Required email!")
-  //     .email("Enter emailing correctly!"),
-  //   password: Yup.string()
-  //     .min(4, "Password should not be less than 4 items!")
-  //     .max(15, "Password should not be more than 15!")
-  //     .required("Required password!"),
-  // });
+  const handleSubmitLogin = (evt) => {
+    evt.preventDefault();
+
+    const value = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+    users(value);
+  };
 
   return (
     <>
@@ -168,6 +133,19 @@ export const SignIn = () => {
           </LoginWrap>
         </LoginContent>
       </LoginHeader>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer />
     </>
   );
 };

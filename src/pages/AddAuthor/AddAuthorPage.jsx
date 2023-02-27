@@ -12,13 +12,15 @@ import {
   TextSelect,
 } from "./author.style";
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./fileupload.css";
 import addFile from "../../assets/img/add-file.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../../redux/Token/tokenAction";
 import { Containers } from "../../components/Home/Header/header.style";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AddAuthors = () => {
   let firstRef = useRef();
@@ -50,7 +52,21 @@ export const AddAuthors = () => {
       .post("http://localhost:2020/author", formData, {
         headers: { Authorization: token },
       })
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.status === 201) {
+          console.log(data);
+          toast.success("Author added successfully 😉");
+        }
+      })
+      .catch((err) => toast.error("Something went wrong 🤔"));
+  };
+
+  const [img, setImg] = useState();
+
+  const handleImg = () => {
+    setImg(imgRef.current.value);
+    console.log(imgRef.current.value);
+    toast.success("asasas");
   };
 
   return (
@@ -64,31 +80,19 @@ export const AddAuthors = () => {
                 type="file"
                 accept="image/*"
                 ref={imgRef}
+                onChange={handleImg}
               />
               <div className="drag-text">
-                {/* {sendFile ? (
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      position: "absolute",
-                      top: "0",
-                      left: "0",
-                      bottom: "0",
-                      right: "0",
-                    }}
-                    src={sendFile}
-                    alt=""
-                  />
-                ) : (
-                  ""
-                )} */}
                 <img src={addFile} alt="" />
                 <p>Click or drag file to this area to upload</p>
               </div>
             </div>
             <div className="file-upload-content">
-              <img className="file-upload-image" src="#" alt="your image" />
+              <img
+                className="file-upload-image"
+                src="C:\fakepath\avloniy.png"
+                alt="your image"
+              />
               <div className="image-title-wrap">
                 <button
                   type="button"
@@ -102,7 +106,12 @@ export const AddAuthors = () => {
           </div>
         </BookBg>
         <BookContent>
-          <Link className="btn btn-secondary rounded-pill mt-3 ms-3 position-absolute" to="/" >Back</Link>
+          <Link
+            className="btn btn-secondary rounded-pill mt-3 ms-3 position-absolute"
+            to="/"
+          >
+            Back
+          </Link>
           <BookWrap>
             <BookForm
               onSubmit={handleSubmit}
@@ -175,6 +184,20 @@ export const AddAuthors = () => {
           </BookWrap>
         </BookContent>
       </BookHeader>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
+      <ToastContainer />
     </>
   );
 };

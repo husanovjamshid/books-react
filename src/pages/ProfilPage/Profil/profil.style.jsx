@@ -26,10 +26,14 @@ export const ProfilCamera = styled.img`
 `;
 
 export const ProfilImg = styled.img`
-  max-width: 174.99px;
-  max-height: 175px;
-  min-width: 174.99px;
-  min-height: 175px;
+  width: 100%;
+  height: 100%;
+  max-height: 179px;
+  max-width: 179px;
+  min-height: 179px;
+  min-width: 179px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 50%;
 `;
 

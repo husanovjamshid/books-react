@@ -24,6 +24,7 @@ export const CatCard = styled.div`
   width: 100%;
   max-width: 295px;
   max-height: 393px;
+  min-height: 393px;
   text-align: start;
   overflow: hidden;
 `;

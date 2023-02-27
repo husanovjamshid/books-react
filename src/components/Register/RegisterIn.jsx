@@ -12,15 +12,14 @@ import {
   FieldInput,
 } from "./signup.style";
 import RegisterBG from "../../assets/img/register-bg.png";
-import axios from "axios";
 import { useRef } from "react";
-// import { Formik, FieldInput, ErrorMessage, Form } from "formik";
-// import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../Api/api";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../redux/Token/tokenAction";
 import { setUser } from "../../redux/Users/userAction";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const SignUp = () => {
   let firstRef = useRef();
@@ -28,32 +27,6 @@ export const SignUp = () => {
   let phoneRef = useRef();
   let emailRef = useRef();
   let passwordRef = useRef();
-
-  // const axiosRender = async () => {
-  //   const data = ;
-
-  //   console.log(data);
-  // };
-
-  // const registerRender = async () => {
-  //   axios
-  //     .post("http://localhost:2020/user/register", {
-  //       first_name: firstRef.current.value,
-  //       last_name: lastRef.current.value,
-  //       phone: phoneRef.current.value,
-  //       email: emailRef.current.value,
-  //       password: passwordRef.current.value,
-  //     })
-  //     .then((data) => console.log(data))
-  //     .catch((err) => console.log(err));
-  // };
-  // const initialValues = {
-  //   firstRef: "",
-  //   lastRef: "",
-  //   phoneRef: "",
-  //   emailRef: "",
-  //   passwordRef: "",
-  // };
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -66,7 +39,6 @@ export const SignUp = () => {
       console.log(data.data);
       dispatch(setToken(data.data.token));
       dispatch(setUser(JSON.stringify(data.config.data)));
-
       navigate("/");
     }
   };
@@ -243,6 +215,19 @@ export const SignUp = () => {
             {/* </Formik> */}
           </RegisterWrap>
         </RegisterContent>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        <ToastContainer />
       </RegisterHeader>
     </>
   );

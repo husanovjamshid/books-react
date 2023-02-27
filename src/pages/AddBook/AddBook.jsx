@@ -19,6 +19,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../../redux/Token/tokenAction";
 import { Containers } from "../../components/Home/Header/header.style";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AddBook = () => {
   let title = useRef();
@@ -50,7 +52,13 @@ export const AddBook = () => {
       .post("http://localhost:2020/book", formData, {
         headers: { Authorization: token },
       })
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.status === 201) {
+          console.log(data);
+          toast.success("Book added successfully 😉");
+        }
+      })
+      .catch((err) => toast.error("Something went wrong 🤔"));
   };
 
   const [bookAuthor, setBookAuthor] = useState([]);
@@ -212,6 +220,19 @@ export const AddBook = () => {
           </BookWrap>
         </BookContent>
       </BookHeader>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer />
     </>
   );
 };

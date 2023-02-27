@@ -10,6 +10,8 @@ import {
   FormNameSecurity,
   ProfilFormSecurity,
 } from "./security.style";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Security = () => {
   const [user, setUser] = useState([]);
@@ -45,8 +47,13 @@ export const Security = () => {
           headers: { Authorization: token },
         }
       )
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+      .then((data) => {
+        if (data.status === 201) {
+          console.log(data);
+          toast.success("Password changed successfully 😉");
+        }
+      })
+      .catch((err) => toast.error("Please enter the correct password ☹️"));
   };
 
   return (
@@ -79,6 +86,19 @@ export const Security = () => {
           <FormButton>Save Changes</FormButton>
         </form>
       </ProfilFormSecurity>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer />
     </Containers>
   );
 };

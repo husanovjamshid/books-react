@@ -19,6 +19,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../../../redux/Token/tokenAction";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export const Profil = () => {
   const [user, setUser] = useState([]);
   const token = useSelector((item) => item.token.token);
@@ -48,8 +51,13 @@ export const Profil = () => {
       .put("http://localhost:2020/user/account", formData, {
         headers: { Authorization: token },
       })
-      .then((data) => console.log(data));
-
+      .then((data) => {
+        if (data.status === 201) {
+          console.log(data);
+          toast.success("Profile changed successfully 😉");
+        }
+      })
+      .catch((err) => toast.error("Change all the data ☹️"));
   };
 
   return (
@@ -58,7 +66,6 @@ export const Profil = () => {
         {" "}
         <ProfilWrap>
           <ProfilImg
-          className="w-100"
             src={
               user.image ? `http://localhost:2020/${user.image}` : `${avatar}`
             }
@@ -100,6 +107,20 @@ export const Profil = () => {
           </form>
         </ProfilForm>
       </ProfilContent>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
+      <ToastContainer />
     </Containers>
   );
 };
