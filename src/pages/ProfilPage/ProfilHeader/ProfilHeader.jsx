@@ -7,7 +7,7 @@ export const ProfileHeader = () => {
       <div className="row m-0">
         <div
           style={{ background: "#F3F6F9", cursor: "pointer",padding: '8px 15px' }}
-          className="col-md-4"
+          className="col-4 col-sm-4 col-md-4 col-lg-4"
         >
           <NavLink to="">
             <div className="d-flex gap-3 align-items-center">
@@ -18,7 +18,7 @@ export const ProfileHeader = () => {
         </div>
         <div
           style={{ background: "#F3F6F9", cursor: "pointer",padding: '8px 15px' }}
-          className="col-md-4"
+          className="col-4 col-sm-4 col-md-4 col-lg-4"
         >
           <NavLink to="security">
             <div className="d-flex gap-3 align-items-center ">
@@ -29,7 +29,7 @@ export const ProfileHeader = () => {
         </div>
         <div
           style={{ background: "#F3F6F9", cursor: "pointer",padding: '8px 15px' }}
-          className="col-md-4"
+          className="col-4 col-sm-4 col-md-4 col-lg-4"
         >
           <NavLink to="setting">
             <div className="d-flex gap-3 align-items-center ">

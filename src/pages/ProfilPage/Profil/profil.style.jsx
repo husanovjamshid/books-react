@@ -4,6 +4,14 @@ export const ProfilWrap = styled.div`
   width: 100%;
   max-width: 175px;
   position: relative;
+
+  @media (max-width: 425px) {
+    max-width: 100px;
+  }
+
+  @media (max-width: 375px) {
+    max-width: 90px;
+  }
 `;
 
 export const ProfilContent = styled.div`
@@ -19,10 +27,38 @@ export const UploadWrap = styled.div`
   bottom: -10px;
   right: 0;
   cursor: pointer;
+
+  @media (max-width: 1100px) {
+    right: 10px;
+  }
+
+  @media (max-width: 850px) {
+    right: 40px;
+    bottom: -7px;
+  }
+
+  @media (max-width: 425px) {
+    right: 20px;
+  }
+
+  @media (max-width: 375px) {
+    right: 25px;
+  }
 `;
 
 export const ProfilCamera = styled.img`
   cursor: pointer;
+  @media (max-width: 850px) {
+    width: 40px;
+  }
+
+  @media (max-width: 425px) {
+    width: 27px;
+  }
+
+  @media (max-width: 375px) {
+    width: 24px;
+  }
 `;
 
 export const ProfilImg = styled.img`
@@ -35,6 +71,34 @@ export const ProfilImg = styled.img`
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
+
+  @media (max-width: 1100px) {
+    min-height: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  @media (max-width: 850px) {
+    min-height: 130px;
+    min-width: 130px;
+    max-width: 130px;
+    max-height: 130px;
+  }
+
+  @media (max-width: 425px) {
+    min-height: 75px;
+    min-width: 75px;
+    max-width: 75px;
+    max-height: 75px;
+  }
+
+  @media (max-width: 375px) {
+    min-height: 65px;
+    min-width: 65px;
+    max-width: 65px;
+    max-height: 65px;
+  }
 `;
 
 export const ProfilInput = styled.input`
@@ -53,6 +117,10 @@ export const ProfilInput = styled.input`
 export const ProfilForm = styled.div`
   width: 100%;
   max-width: 712px;
+
+  @media (max-width: 1100px) {
+    max-width: 600px;
+  }
 `;
 
 export const FormName = styled.input`

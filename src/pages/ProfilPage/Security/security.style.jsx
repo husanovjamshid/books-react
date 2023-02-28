@@ -44,7 +44,7 @@ export const FormButton = styled.button`
   width: 100%;
   display: block;
   margin-left: auto;
-  margin-top: 80px;
+  margin-top: 60px;
   max-width: 142px;
   border-radius: 4px;
   font-family: "Poppins";
@@ -54,4 +54,5 @@ export const FormButton = styled.button`
   line-height: 20px;
   padding: 12px 20px;
   color: #ffffff;
+  margin-bottom: 15px;
 `;

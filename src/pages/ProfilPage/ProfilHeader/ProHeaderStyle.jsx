@@ -1,9 +1,4 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-// export const NavLink = styled(NavLink)`
-//   background: #dde6f5;
-//   border-radius: 4px 4px 0px 0px;
-// `;
 
 export const ProfilNumber = styled.p`
   background: #e5eaee;

@@ -81,7 +81,6 @@ export const Profil = () => {
             <FormLabel htmlFor="fname">First name</FormLabel>
             <FormName
               ref={first_name}
-              // value={user.first_name}
               type="text"
               id="fname"
               placeholder={user.first_name}
@@ -89,7 +88,6 @@ export const Profil = () => {
             <FormLabel htmlFor="lname">Last name</FormLabel>
             <FormName
               ref={last_name}
-              // value={user.last_name}
               type="text"
               id="lname"
               placeholder={user.last_name}
@@ -97,7 +95,6 @@ export const Profil = () => {
             <FormLabel htmlFor="phone">Phone</FormLabel>
             <FormPhone
               ref={phone}
-              // value={user.phone}
               type="number"
               id="phone"
               placeholder={user.phone}
