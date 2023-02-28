@@ -54,7 +54,6 @@ export const AddBook = () => {
       })
       .then((data) => {
         if (data.status === 201) {
-          console.log(data);
           toast.success("Book added successfully 😉");
         }
       })
@@ -68,7 +67,6 @@ export const AddBook = () => {
   };
 
   const handleChangeSelect = (evt) => {
-    console.log(evt.target.value);
     getAuthor(evt.target.value);
   };
 
@@ -76,7 +74,6 @@ export const AddBook = () => {
   const getGenre = async () => {
     const data = await axios.get("http://localhost:2020/genre");
     setGenre(data.data);
-    console.log(data.data);
   };
 
   useEffect(() => {

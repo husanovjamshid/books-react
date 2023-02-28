@@ -10,4 +10,5 @@ function App() {
   return <>{token ? <PrivatePage /> : <Public />}</>;
 }
 
+
 export default App;

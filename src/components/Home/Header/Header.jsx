@@ -17,7 +17,6 @@ export const Header = () => {
 
   const handleLogout = () => {
     dispatch(setToken(localStorage.removeItem("token")));
-    // dispatch(setUser(localStorage.removeItem("user")));
 
     navigate("/");
   };

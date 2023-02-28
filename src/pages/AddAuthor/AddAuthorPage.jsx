@@ -54,7 +54,6 @@ export const AddAuthors = () => {
       })
       .then((data) => {
         if (data.status === 201) {
-          console.log(data);
           toast.success("Author added successfully 😉");
         }
       })
@@ -65,7 +64,6 @@ export const AddAuthors = () => {
 
   const handleImg = () => {
     setImg(imgRef.current.value);
-    console.log(imgRef.current.value);
     toast.success("asasas");
   };
 

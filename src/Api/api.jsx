@@ -13,4 +13,7 @@ export const api = {
     axios.post(BASE_URL + "/user/login", value).catch((err) => {
       toast.error("Incorrect email or password ☹️");
     }),
+  userCategory: () => axios.get(BASE_URL + "/genre"),
+  // userGenreId: (value) => axios.get(BASE_URL + `author/genreId/${value}`),
+  userImg: (img) => axios.get(BASE_URL + `/${img}`),
 };

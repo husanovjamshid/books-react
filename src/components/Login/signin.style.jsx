@@ -12,6 +12,9 @@ export const LoginBg = styled.div`
   height: 100vh;
   max-width: 50%;
   background-color: #c9ac8c;
+  @media (max-width: 690px) {
+    display: none;
+  }
 `;
 
 export const LoginContent = styled.div`
@@ -20,10 +23,23 @@ export const LoginContent = styled.div`
   height: 100vh;
   max-width: 50%;
   background-color: #fff;
+
+  @media (max-width: 690px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 690px) {
+    max-width: 300px;
+    margin:  auto;
+    display: block;
+   
+  }
 `;
 
 export const LoginImg = styled.img`
   width: 100%;
+  object-fit: cover;
+  object-position: center;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -31,7 +47,6 @@ export const LoginImg = styled.img`
   right: 0;
   margin: auto;
   max-width: 500px;
-  height: 500px;
 `;
 
 export const LoginWrap = styled.div`
@@ -103,6 +118,6 @@ export const LoginButton = styled.button`
 `;
 
 export const InputGroup = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   position: relative;
 `;

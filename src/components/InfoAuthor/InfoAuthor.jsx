@@ -29,7 +29,6 @@ export const InfoAuth = () => {
       })
       .then((data) => {
         setAuthorInfo(data.data);
-        // console.log(data.data);
       });
   }, [getAuthor]);
 

@@ -33,7 +33,6 @@ export const SignIn = () => {
     if (data.status === 201) {
       localStorage.setItem("token", data.data.token);
       localStorage.setItem("user", JSON.stringify(data.config.data));
-      console.log(data.data);
       dispatch(setToken(data.data.token));
       dispatch(setUser(JSON.stringify(data.config.data)));
       navigate("/");

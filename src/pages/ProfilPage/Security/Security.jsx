@@ -49,7 +49,6 @@ export const Security = () => {
       )
       .then((data) => {
         if (data.status === 201) {
-          console.log(data);
           toast.success("Password changed successfully 😉");
         }
       })

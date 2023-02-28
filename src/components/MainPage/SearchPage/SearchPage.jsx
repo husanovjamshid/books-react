@@ -1,9 +1,11 @@
 import { useRef } from "react";
 import {
+  ButtonImg,
   MainButton,
   MainInput,
   MainInputTitle,
   MainWrapper,
+  SearchTitle,
 } from "../main.style";
 import search from "../../../assets/img/search.svg";
 import axios from "axios";
@@ -15,11 +17,9 @@ export const SearchPage = () => {
   const authorName = useRef();
   const dispatch = useDispatch();
 
-
   const handleSearch = (evt) => {
     evt.preventDefault();
     dispatch(setSearch(authorName.current.value));
-    // navigate("/");
     authorName.current.value = "";
   };
   return (
@@ -27,14 +27,15 @@ export const SearchPage = () => {
       <MainWrapper>
         <MainInputTitle>Qidirish</MainInputTitle>
         <form onSubmit={handleSearch}>
-          <div className="d-flex gap-3">
+          <div className="d-flex gap-3 align-items-center">
             <MainInput
               type="text"
               ref={authorName}
               placeholder="Adiblar, kitoblar, audiolar, maqolalar..."
             />
             <MainButton>
-              <img src={search} alt="" /> Izlash
+              <ButtonImg src={search} alt="" />{" "}
+              <SearchTitle>Izlash</SearchTitle>
             </MainButton>
           </div>
         </form>

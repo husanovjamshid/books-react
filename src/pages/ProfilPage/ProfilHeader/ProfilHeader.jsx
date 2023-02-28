@@ -1,6 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ProfilDesc, ProfilNumber } from "./ProHeaderStyle";
-// import { NavLink } from "./ProHeaderStyle";
 
 export const ProfileHeader = () => {
   return (

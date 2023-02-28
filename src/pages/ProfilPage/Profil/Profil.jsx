@@ -53,7 +53,6 @@ export const Profil = () => {
       })
       .then((data) => {
         if (data.status === 201) {
-          console.log(data);
           toast.success("Profile changed successfully 😉");
         }
       })

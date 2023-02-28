@@ -12,6 +12,9 @@ export const RegisterBg = styled.div`
   height: 100vh;
   max-width: 50%;
   background-color: #c9ac8c;
+  @media (max-width: 690px) {
+    display: none;
+  }
 `;
 
 export const RegisterContent = styled.div`
@@ -20,6 +23,16 @@ export const RegisterContent = styled.div`
   height: 100vh;
   max-width: 50%;
   background-color: #fff;
+  @media (max-width: 690px) {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 690px) {
+    max-width: 300px;
+    margin: auto;
+    display: block;
+  }
 `;
 
 export const RegisterImg = styled.img`
@@ -46,6 +59,10 @@ export const RegisterWrap = styled.div`
 export const RegisterForm = styled.form`
   width: 100%;
   max-width: 330px;
+
+  @media (max-width: 690px) {
+    margin-bottom: 15px;
+  }
 `;
 
 export const RegisterTitle = styled.h3`
@@ -96,6 +113,6 @@ export const RegisterButton = styled.button`
 `;
 
 export const InputGroup = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   position: relative;
 `;

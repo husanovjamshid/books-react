@@ -36,7 +36,6 @@ export const SignUp = () => {
     if (data.status === 201) {
       localStorage.setItem("token", data.data.token);
       localStorage.setItem("user", JSON.stringify(data.config.data));
-      console.log(data.data);
       dispatch(setToken(data.data.token));
       dispatch(setUser(JSON.stringify(data.config.data)));
       navigate("/");
@@ -56,21 +55,7 @@ export const SignUp = () => {
 
     users(values);
 
-    // axios.get("http://localhost:5000/genre").then((data) => console.log(data)).catch(err => console.log(err));
   };
-
-  // const validateSchema = Yup.object({
-  //   first_name: Yup.string().required("Required firstname!"),
-  //   last_name: Yup.string().required("Required lastname!"),
-  //   phone: Yup.string().required("Required phone!"),
-  //   email: Yup.string()
-  //     .required("Required email!")
-  //     .email("Enter emailing correctly!"),
-  //   password: Yup.string()
-  //     .min(4, "Password should not be less than 4 items!")
-  //     .max(15, "Password should not be more than 15!")
-  //     .required("Required password!"),
-  // });
 
   return (
     <>
@@ -120,6 +105,7 @@ export const SignUp = () => {
                   type="text"
                   aria-describedby="emailHelp"
                   ref={firstRef}
+                  required
                 />
                 {/* <ReqSpan>
                   <ErrorMessage name="firstRef" />
@@ -140,6 +126,7 @@ export const SignUp = () => {
                   type="text"
                   aria-describedby="emailHelp"
                   ref={lastRef}
+                  required
                 />
                 {/* <ReqSpan>
                   <ErrorMessage name="lastRef" />
@@ -161,6 +148,7 @@ export const SignUp = () => {
                   aria-describedby="emailHelp"
                   ref={phoneRef}
                   defaultValue="999104910"
+                  required
                 />
                 {/* <ReqSpan>
                   <ErrorMessage name="phoneRef" />
@@ -183,6 +171,7 @@ export const SignUp = () => {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   ref={emailRef}
+                  required
                 />
                 {/* <ReqSpan>
                   <ErrorMessage name="emailRef" />
@@ -204,6 +193,7 @@ export const SignUp = () => {
                   id="exampleInputEmail31"
                   aria-describedby="emailHelp"
                   ref={passwordRef}
+                  required
                 />
                 {/* <ReqSpan>
                   <ErrorMessage name="passwordRef" />

@@ -50,7 +50,6 @@ export const BooksPage = () => {
   };
 
   const searchAuthorName = useSelector((item) => item.searchName.searchName);
-  // useEffect(() => {}, []);
 
   const [search, setSearch] = useState([]);
 
@@ -58,7 +57,6 @@ export const BooksPage = () => {
     axios
       .get(`http://localhost:2020/book/search?book=${searchAuthorName}`)
       .then((data) => {
-        console.log(data.data);
         setSearch(data.data);
       });
   }, [searchAuthorName]);

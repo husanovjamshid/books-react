@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AuthId } from "../../redux/AuthorId/authorAction";
+import { api } from "../../Api/api";
 
 export const AuthCategorys = () => {
   const [genre, setGenre] = useState([]);
@@ -27,7 +28,7 @@ export const AuthCategorys = () => {
 
   // GET GENRE
   const getGenre = async () => {
-    const data = await axios.get("http://localhost:2020/genre");
+    const data = await api.userCategory();
     setGenre(data.data);
   };
   useEffect(() => {
@@ -35,23 +36,22 @@ export const AuthCategorys = () => {
   }, []);
 
   // GET AUTHOR GENRES
-  const getGenreAuthor = async (id) => {
-    const data = await axios.get(`http://localhost:2020/author/genreId/${id}`);
+  const getGenreAuthor = async (number) => {
+    const data = await axios.get(
+      `http://localhost:2020/author/genreId/${number}`
+    );
     setAuthor(data.data);
   };
+
   useEffect(() => {
     getGenreAuthor(1);
   }, []);
+
   const handleGenre = (genreId) => {
     getGenreAuthor(genreId);
     setGenreId(genreId);
     setSearch("");
   };
-
-  // AUTHOR ID
-  // const [userId, setUserId] = useState();
-
-  // GET TOKEN
 
   // GET AUTHOR
   const dispatch = useDispatch();
@@ -64,12 +64,10 @@ export const AuthCategorys = () => {
 
   const [search, setSearch] = useState([]);
 
-
   useEffect(() => {
     axios
       .get(`http://localhost:2020/author/search?author=${searchAuthorName}`)
       .then((data) => {
-        console.log(data.data);
         setSearch(data.data);
       });
   }, [searchAuthorName]);
@@ -79,7 +77,6 @@ export const AuthCategorys = () => {
       <HeroPage />
       <AuthWrap>
         <AuthTitle>Asosiy kategoriyalar</AuthTitle>
-
         <TabWrap>
           {genre.length ? (
             <ul
