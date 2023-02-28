@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import homeBg from "../../assets/img/home-bg.png";
 import { Containers } from "../Home/Header/header.style";
 import {
+  HeroBg,
   Title,
   TitleBox,
 } from "./main.style";
@@ -30,7 +31,7 @@ export default class SimpleSlider extends Component {
             <div
               className="position-relative"
             >
-              <img src={homeBg} alt="" />
+              <HeroBg src={homeBg} alt="" />
               <TitleBox>
                 <Title>
                   Temuriylar <br /> davri <br /> adabiyoti
@@ -38,10 +39,9 @@ export default class SimpleSlider extends Component {
               </TitleBox>
             </div>
             <div
-              // style={{ overflow: "hidden", borderRadius: "19px" }}
               className="position-relative"
             >
-              <img src={homeBg} alt="" />
+              <HeroBg src={homeBg} alt="" />
               <TitleBox>
                 <Title>
                   Jadid <br /> davri <br /> adabiyoti
@@ -52,7 +52,7 @@ export default class SimpleSlider extends Component {
               // style={{ overflow: "hidden", borderRadius: "19px" }}
               className="position-relative"
             >
-              <img src={homeBg} alt="" />
+              <HeroBg src={homeBg} alt="" />
               <TitleBox>
                 <Title>
                   Sovet <br /> davri <br /> adabiyoti
@@ -63,7 +63,7 @@ export default class SimpleSlider extends Component {
               // style={{ overflow: "hidden", borderRadius: "19px" }}
               className="position-relative"
             >
-              <img src={homeBg} alt="" />
+              <HeroBg src={homeBg} alt="" />
               <TitleBox>
                 <Title>
                   Mustaqillik <br /> davri <br /> adabiyoti

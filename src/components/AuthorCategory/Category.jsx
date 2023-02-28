@@ -116,7 +116,7 @@ export const AuthCategorys = () => {
                 <div className="row gy-4">
                   {search.map((auth) => (
                     <div
-                      className="col-md-3"
+                      className="col-12 col-sm-6 col-md-4 col-lg-3 "
                       onClick={() => handleAuthor(auth.id)}
                     >
                       <Link to="/infoAuthor">
@@ -146,7 +146,7 @@ export const AuthCategorys = () => {
                 <div className="row gy-4">
                   {author.map((auth) => (
                     <div
-                      className="col-md-3"
+                      className="col-12 col-sm-6 col-md-4 col-lg-3 "
                       onClick={() => handleAuthor(auth.id)}
                     >
                       <Link to="/infoAuthor">

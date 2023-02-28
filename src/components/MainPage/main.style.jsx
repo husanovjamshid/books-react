@@ -5,6 +5,12 @@ export const TitleBox = styled.div`
   max-width: 337px;
 `;
 
+export const FormWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const Title = styled.h3`
   position: absolute;
   top: 7%;
@@ -17,6 +23,16 @@ export const Title = styled.h3`
   color: #d1b89d;
   @media (max-width: 992px) {
     font-size: 51px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 41px;
+    line-height: 50px;
+  }
+
+  @media (max-width: 50px) {
+    font-size: 35px;
+    line-height: 50px;
   }
 `;
 
@@ -64,6 +80,33 @@ export const MainWrapper = styled.div`
 
   @media (max-width: 768px) {
     max-width: 600px;
+    padding: 20px 63px;
+    bottom: -25%;
+  }
+
+  @media (max-width: 660px) {
+    max-width: 550px;
+    padding: 18px 60px;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 500px;
+    padding: 14px 40px 17px 40px;
+  }
+
+  @media (max-width: 550px) {
+    max-width: 450px;
+    padding: 10px 25px 17px 25px;
+  }
+
+  @media (max-width: 500px) {
+    max-width: 400px;
+    padding: 10px 20px 17px 20px;
+  }
+
+  @media (max-width: 450px) {
+    max-width: 350px;
+    padding: 8px 20px 17px 20px;
   }
 `;
 
@@ -77,6 +120,14 @@ export const MainInputTitle = styled.h3`
 
   @media (max-width: 800px) {
     font-size: 27px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 22px;
   }
 `;
 
@@ -102,15 +153,15 @@ export const MainInput = styled.input`
   }
 
   @media (max-width: 992px) {
-    max-width: 500px;
+    max-width: 530px;
   }
 
   @media (max-width: 920px) {
-    max-width: 450px;
+    max-width: 470px;
   }
 
   @media (max-width: 860px) {
-    max-width: 400px;
+    max-width: 440px;
   }
 
   @media (max-width: 800px) {
@@ -129,6 +180,21 @@ export const MainInput = styled.input`
     font-size: 16px;
     line-height: 24px;
     color: rgba(13, 13, 13, 0.3);
+
+    @media (max-width: 550px) {
+      font-size: 15px;
+      padding: 8px 0 8px 23px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 14px;
+      padding: 8px 0 8px 23px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 12px;
+      padding: 8px 0 8px 17px;
+    }
   }
 `;
 
@@ -138,7 +204,7 @@ export const MainButton = styled.button`
   align-items: center;
   gap: 5px;
   padding: 12px 42px;
-  border-radius: 15px;
+  border-radius: 10px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
@@ -148,7 +214,7 @@ export const MainButton = styled.button`
   border: none;
 
   @media (max-width: 1015px) {
-    padding: 10px 25px;
+    padding: 9px 25px;
   }
 
   @media (max-width: 992px) {
@@ -166,6 +232,10 @@ export const MainButton = styled.button`
   @media (max-width: 768px) {
     padding: 10px;
   }
+
+  /* @media (max-width: 550px) {
+    padding: 8px;
+  } */
 `;
 
 export const SearchTitle = styled.p`
@@ -179,5 +249,15 @@ export const SearchTitle = styled.p`
 export const ButtonImg = styled.img`
   @media (max-width: 992px) {
     width: 20px;
+  }
+
+  @media (max-width: 550px) {
+    width: 18px;
+  }
+`;
+
+export const HeroBg = styled.img`
+  @media (max-width: 768px) {
+    max-height: 300px;
   }
 `;

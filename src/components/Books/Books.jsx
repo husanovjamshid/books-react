@@ -107,7 +107,7 @@ export const BooksPage = () => {
                   {search.map((item) => (
                     <div
                       onClick={() => handleBook(item.id)}
-                      className="col-md-2 text-start"
+                      className="col-12 col-sm-6 col-md-4 col-lg-3 text-start d-flex justify-content-center "
                     >
                       <Link to="/infoBook">
                         <div>
@@ -127,7 +127,7 @@ export const BooksPage = () => {
                   {book.map((item) => (
                     <div
                       onClick={() => handleBook(item.id)}
-                      className="col-md-2 text-start"
+                      className="col-12 col-sm-6 col-md-4 col-lg-3 text-start d-flex justify-content-center"
                     >
                       <Link to="/infoBook">
                         <div>

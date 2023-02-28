@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import {
   ButtonImg,
+  FormWrapper,
   MainButton,
   MainInput,
   MainInputTitle,
@@ -27,7 +28,7 @@ export const SearchPage = () => {
       <MainWrapper>
         <MainInputTitle>Qidirish</MainInputTitle>
         <form onSubmit={handleSearch}>
-          <div className="d-flex gap-3 align-items-center">
+          <FormWrapper>
             <MainInput
               type="text"
               ref={authorName}
@@ -37,7 +38,7 @@ export const SearchPage = () => {
               <ButtonImg src={search} alt="" />{" "}
               <SearchTitle>Izlash</SearchTitle>
             </MainButton>
-          </div>
+          </FormWrapper>
         </form>
       </MainWrapper>
     </>

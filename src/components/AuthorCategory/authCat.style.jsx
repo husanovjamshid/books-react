@@ -27,6 +27,7 @@ export const CatCard = styled.div`
   min-height: 393px;
   text-align: start;
   overflow: hidden;
+  margin: 0 auto;
 `;
 
 export const CardTitle = styled.h3`
