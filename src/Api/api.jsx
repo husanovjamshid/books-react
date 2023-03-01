@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BASE_URL = "http://localhost:2020";
+const BASE_URL = "https://books.ogaw.uz";
 
 export const api = {
   userRegister: (value) =>

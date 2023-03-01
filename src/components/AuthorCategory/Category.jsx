@@ -38,7 +38,7 @@ export const AuthCategorys = () => {
   // GET AUTHOR GENRES
   const getGenreAuthor = async (number) => {
     const data = await axios.get(
-      `http://localhost:2020/author/genreId/${number}`
+      `https://books.ogaw.uz/author/genreId/${number}`
     );
     setAuthor(data.data);
   };
@@ -66,7 +66,7 @@ export const AuthCategorys = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:2020/author/search?author=${searchAuthorName}`)
+      .get(`https://books.ogaw.uz/author/search?author=${searchAuthorName}`)
       .then((data) => {
         setSearch(data.data);
       });
@@ -124,7 +124,7 @@ export const AuthCategorys = () => {
                           <img
                             height="224px"
                             width="295px"
-                            src={`http://localhost:2020/${auth.image}`}
+                            src={`https://books.ogaw.uz/${auth.image}`}
                             alt=""
                           />
                           <CardBody>
@@ -154,7 +154,7 @@ export const AuthCategorys = () => {
                           <img
                             height="224px"
                             width="295px"
-                            src={`http://localhost:2020/${auth.image}`}
+                            src={`https://books.ogaw.uz/${auth.image}`}
                             alt=""
                           />
                           <CardBody>

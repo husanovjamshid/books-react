@@ -21,7 +21,7 @@ export const BooksPage = () => {
   const [genresId, setGenreId] = useState(1);
 
   const getGenre = async () => {
-    const data = await axios.get("http://localhost:2020/genre");
+    const data = await axios.get("https://books.ogaw.uz/genre");
     setGenre(data.data);
   };
 
@@ -30,7 +30,7 @@ export const BooksPage = () => {
   }, []);
 
   const getGenreAuthor = async (id) => {
-    const data = await axios.get(`http://localhost:2020/book/genreId/${id}`);
+    const data = await axios.get(`https://books.ogaw.uz/book/genreId/${id}`);
     setBook(data.data);
   };
 
@@ -55,7 +55,7 @@ export const BooksPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:2020/book/search?book=${searchAuthorName}`)
+      .get(`https://books.ogaw.uz/book/search?book=${searchAuthorName}`)
       .then((data) => {
         setSearch(data.data);
       });
@@ -112,7 +112,7 @@ export const BooksPage = () => {
                       <Link to="/infoBook">
                         <div>
                           <BookImg
-                            src={`http://localhost:2020/${item.image}`}
+                            src={`https://books.ogaw.uz/${item.image}`}
                             alt=""
                           />
                           <BookTitleName>{item.title}</BookTitleName>
@@ -132,7 +132,7 @@ export const BooksPage = () => {
                       <Link to="/infoBook">
                         <div>
                           <BookImg
-                            src={`http://localhost:2020/${item.image}`}
+                            src={`https://books.ogaw.uz/${item.image}`}
                             alt=""
                           />
                           <BookTitleName>{item.title}</BookTitleName>

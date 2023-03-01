@@ -23,6 +23,7 @@ import {
   BookTitleName,
   InfoAuthImg,
   InfoAuthorBox,
+  InfoBookWrapper,
 } from "./infoBook.style";
 import avatar from "../../assets/img/avloniy.png";
 import { Link, NavLink } from "react-router-dom";
@@ -38,7 +39,7 @@ export const InfoBook = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:2020/book/bookId/${bookId}`, {
+      .get(`https://books.ogaw.uz/book/bookId/${bookId}`, {
         headers: { Authorization: token },
       })
       .then((data) => setBook(data.data));
@@ -46,9 +47,9 @@ export const InfoBook = () => {
   return (
     <Containers>
       <Header />
-      <div className="d-flex gap-5 mt-4">
+      <InfoBookWrapper>
         <div>
-          <InfoAuthImg src={`http://localhost:2020/${getBook.image}`} alt="" />
+          <InfoAuthImg src={`https://books.ogaw.uz/${getBook.image}`} alt="" />
         </div>
         <InfoAuthorBox>
           <AuthName> {getBook.title} </AuthName>
@@ -78,7 +79,7 @@ export const InfoBook = () => {
           </BookInfoWrap>
           <AuthInfoDesc>{getBook.description}</AuthInfoDesc>
         </InfoAuthorBox>
-      </div>
+      </InfoBookWrapper>
       <MultipleItems />
     </Containers>
   );

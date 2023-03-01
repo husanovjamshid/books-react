@@ -17,7 +17,7 @@ export default class MultipleItems extends Component {
     const settings = {
       dots: false,
       infinite: true,
-      slidesToShow: 6,
+      slidesToShow: 2,
       slidesToScroll: 6,
       autoplay: true,
       speed: 3000,
@@ -28,7 +28,7 @@ export default class MultipleItems extends Component {
     return (
       <div className="mb-5">
         <BooksList>
-          <div className="d-flex justify-content-between ">
+          <div className="d-flex justify-content-between align-items-center">
             <AuthorNovel>Asarlari</AuthorNovel>
             <Link to="/books">Barchasini ko’rish</Link>
           </div>
@@ -153,3 +153,4 @@ export default class MultipleItems extends Component {
     );
   }
 }
+

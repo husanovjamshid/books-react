@@ -25,7 +25,7 @@ export const Header = () => {
   dispatch(setToken(localStorage.getItem("token") || ""));
   useEffect(() => {
     axios
-      .get("http://localhost:2020/user/me", {
+      .get("https://books.ogaw.uz/user/me", {
         headers: { Authorization: token },
       })
       .then((data) => setUsers(data.data));
@@ -34,7 +34,7 @@ export const Header = () => {
   return (
     <>
       <header>
-        <nav className="py-3 navbar-expand-lg ">
+        <nav className="py-3 navbar-expand-lg fixed-top bg-white shadow">
           <Containers>
             <div className="d-flex justify-content-between">
               <button
@@ -127,7 +127,7 @@ export const Header = () => {
                       <HeaderImg
                         src={
                           users.image
-                            ? `http://localhost:2020/${users.image}`
+                            ? `https://books.ogaw.uz/${users.image}`
                             : `${avatar}`
                         }
                         className="rounded-circle"

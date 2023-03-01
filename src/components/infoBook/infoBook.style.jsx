@@ -6,6 +6,19 @@ export const InfoAuthorBox = styled.div`
   margin-top: 20px;
 `;
 
+export const InfoBookWrapper = styled.div`
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+  align-items: center;
+
+  @media (max-width: 950px) {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 export const AuthName = styled.h3`
   font-family: "Poppins";
   font-style: normal;
@@ -13,6 +26,21 @@ export const AuthName = styled.h3`
   font-size: 48px;
   line-height: 72px;
   color: #d1b89d;
+
+  @media (max-width: 992px) {
+    font-size: 45px;
+    line-height: 65px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 35px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 25px;
+  }
 `;
 
 export const AuthInfoDesc = styled.p`
@@ -37,11 +65,17 @@ export const InfoAuthText = styled.p`
 `;
 
 export const InfoAuthImg = styled.img`
-  max-width: 455px;
+  width: 100%;
   min-width: 455px;
   max-height: 521px;
-  min-height: 521px;
+  height: 100%;
   border-radius: 20px;
+  object-fit: cover;
+
+  @media (max-width: 500px) {
+    min-width: 100%;
+    max-width: 400px;
+  }
 `;
 
 export const BookImg = styled.img`
@@ -50,6 +84,7 @@ export const BookImg = styled.img`
   min-width: 190px;
   min-height: 283px;
   border-radius: 15px;
+  object-fit: cover;
 `;
 
 export const BookList = styled.ul`
@@ -152,6 +187,15 @@ export const BookStatPage = styled.p`
   font-size: 20px;
   line-height: 30px;
   color: rgba(13, 13, 13, 0.6);
+
+  @media (max-width: 500px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 17px;
+  }
 `;
 
 export const BookStatPrice = styled.p`
@@ -162,4 +206,13 @@ export const BookStatPrice = styled.p`
   font-size: 20px;
   line-height: 30px;
   color: #0d0d0d;
+
+  @media (max-width: 500px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 17px;
+  }
 `;

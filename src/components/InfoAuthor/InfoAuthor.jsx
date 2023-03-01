@@ -8,6 +8,7 @@ import {
   InfoAuthImg,
   InfoAuthorBox,
   InfoAuthText,
+  InfoAuthWrap,
   InforAuthLine,
 } from "./infoAuth.style";
 import { Link, NavLink } from "react-router-dom";
@@ -24,7 +25,7 @@ export const InfoAuth = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:2020/author/authorId/${getAuthor}`, {
+      .get(`https://books.ogaw.uz/author/authorId/${getAuthor}`, {
         headers: { Authorization: token },
       })
       .then((data) => {
@@ -35,7 +36,7 @@ export const InfoAuth = () => {
   const [books, setBooks] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:2020/author/books/${getAuthor}`, {
+      .get(`https://books.ogaw.uz/author/books/${getAuthor}`, {
         headers: { Authorization: token },
       })
       .then((data) => setBooks(data.data));
@@ -45,10 +46,10 @@ export const InfoAuth = () => {
       <Containers>
         {" "}
         <Header />
-        <div className="d-flex gap-5 mt-4">
+        <InfoAuthWrap >
           <div>
             <InfoAuthImg
-              src={`http://localhost:2020/${authorInfo.image}`}
+              src={`https://books.ogaw.uz/${authorInfo.image}`}
               alt=""
             />
           </div>
@@ -72,8 +73,8 @@ export const InfoAuth = () => {
               </div>
             </div>
           </InfoAuthorBox>
-        </div>
-        <MultipleItems  />
+        </InfoAuthWrap>
+        <MultipleItems />
       </Containers>
     </>
   );

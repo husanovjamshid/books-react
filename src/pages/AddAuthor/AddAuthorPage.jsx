@@ -49,22 +49,24 @@ export const AddAuthors = () => {
     formData.append("image", imgRef.current.files[0]);
 
     axios
-      .post("http://localhost:2020/author", formData, {
+      .post("https://books.ogaw.uz/author", formData, {
         headers: { Authorization: token },
       })
       .then((data) => {
-        if (data.status === 201) {
+        if (data.status === 200) {
           toast.success("Author added successfully 😉");
         }
       })
-      .catch((err) => toast.error("Something went wrong 🤔"));
+      .catch((err) => {
+        console.log(err);
+        toast.error("Something went wrong 🤔");
+      });
   };
 
   const [img, setImg] = useState();
 
   const handleImg = () => {
     setImg(imgRef.current.value);
-    toast.success("asasas");
   };
 
   return (
@@ -105,7 +107,7 @@ export const AddAuthors = () => {
         </BookBg>
         <BookContent>
           <Link
-            className="btn btn-secondary rounded-pill mt-3 ms-3 position-absolute"
+            className="btn btn-secondary rounded-pill mt-3 ms-3  position"
             to="/"
           >
             Back

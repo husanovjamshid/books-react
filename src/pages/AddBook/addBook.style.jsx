@@ -4,6 +4,11 @@ export const BookHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 700px) {
+		display: flex;
+		flex-direction: column;
+	}
 `;
 
 export const BookBg = styled.div`
@@ -12,6 +17,11 @@ export const BookBg = styled.div`
   height: 100vh;
   max-width: 50%;
   background: rgba(243, 243, 243, 0.93);
+
+  @media (max-width: 700px) {
+		max-width: 100%;
+		height: 35vh;
+	}
 `;
 
 export const BookContent = styled.div`
@@ -20,6 +30,10 @@ export const BookContent = styled.div`
   height: 100vh;
   max-width: 50%;
   background-color: #fff;
+
+  @media (max-width: 700px) {
+		max-width: 100%;
+	}
 `;
 
 export const BookImg = styled.img`
@@ -56,6 +70,11 @@ export const BookTitle = styled.h3`
   font-size: 36px;
   line-height: 51px;
   color: #000000;
+
+  @media (max-width: 768px) {
+		font-size: 25px;
+		text-align: center;
+	}
 `;
 
 export const BookDesc = styled.p`
@@ -123,6 +142,11 @@ export const BookButton = styled.button`
   margin-top: 34px;
   color: #ffffff;
   border: none;
+
+  @media (max-width: 768px) {
+		margin-top: 0px;
+		margin-bottom: 5px;
+	}
 `;
 
 export const InputGroup = styled.div`

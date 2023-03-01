@@ -49,7 +49,7 @@ export const AddBook = () => {
     formData.append("image", imgRef.current.files[0]);
 
     axios
-      .post("http://localhost:2020/book", formData, {
+      .post("https://books.ogaw.uz/book", formData, {
         headers: { Authorization: token },
       })
       .then((data) => {
@@ -62,7 +62,7 @@ export const AddBook = () => {
 
   const [bookAuthor, setBookAuthor] = useState([]);
   const getAuthor = async (id) => {
-    const data = await axios.get(`http://localhost:2020/author/genreId/${id}`);
+    const data = await axios.get(`https://books.ogaw.uz/author/genreId/${id}`);
     setBookAuthor(data.data);
   };
 
@@ -72,7 +72,7 @@ export const AddBook = () => {
 
   const [genre, setGenre] = useState([]);
   const getGenre = async () => {
-    const data = await axios.get("http://localhost:2020/genre");
+    const data = await axios.get("https://books.ogaw.uz/genre");
     setGenre(data.data);
   };
 
@@ -130,7 +130,7 @@ export const AddBook = () => {
         </BookBg>
         <BookContent>
           <Link
-            className="btn btn-secondary rounded-pill mt-3 ms-3 position-absolute"
+            className="btn btn-secondary rounded-pill mt-3 ms-3 position"
             to="/"
           >
             Back
