@@ -99,6 +99,7 @@ export const SignIn = () => {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   ref={emailRef}
+                  required
                 />
                 {/* <ReqSpan>
                   <ErrorMessage name="emailRef" />
@@ -120,6 +121,7 @@ export const SignIn = () => {
                   id="exampleInputEmail31"
                   aria-describedby="emailHelp"
                   ref={passwordRef}
+                  required
                 />
                 {/* <ReqSpan>
                   <ErrorMessage name="passwordRef" />

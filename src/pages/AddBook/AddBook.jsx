@@ -21,6 +21,7 @@ import { Containers } from "../../components/Home/Header/header.style";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BoxWraps } from "../../app.style";
 
 export const AddBook = () => {
   let title = useRef();
@@ -84,15 +85,15 @@ export const AddBook = () => {
     <>
       <BookHeader>
         <BookBg>
-          <div className="file-upload">
-            <div className="image-upload-wrap">
+          <BoxWraps className="file-upload">
+            <BoxWraps className="image-upload-wrap">
               <input
                 className="file-upload-input"
                 type="file"
                 accept="image/*"
                 ref={imgRef}
               />
-              <div className="drag-text">
+              <BoxWraps className="drag-text">
                 {/* {sendFile ? (
                     <img
                       style={{
@@ -112,11 +113,11 @@ export const AddBook = () => {
                   )} */}
                 <img src={addFile} alt="" />
                 <p>Click or drag file to this area to upload</p>
-              </div>
-            </div>
-            <div className="file-upload-content">
+              </BoxWraps>
+            </BoxWraps>
+            <BoxWraps className="file-upload-content">
               <img className="file-upload-image" src="#" alt="your image" />
-              <div className="image-title-wrap">
+              <BoxWraps className="image-title-wrap">
                 <button
                   type="button"
                   // onClick="removeUpload()"
@@ -124,9 +125,9 @@ export const AddBook = () => {
                 >
                   Remove <span className="image-title">Uploaded Image</span>
                 </button>
-              </div>
-            </div>
-          </div>
+              </BoxWraps>
+            </BoxWraps>
+          </BoxWraps>
         </BookBg>
         <BookContent>
           <Link

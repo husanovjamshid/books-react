@@ -31,6 +31,7 @@ import substract from "../../assets/img/Subtract.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MultipleItems from "../InfoAuthor/bookCarousel";
+import { BoxWraps } from "../../app.style";
 
 export const InfoBook = () => {
   const [getBook, setBook] = useState([]);
@@ -48,9 +49,9 @@ export const InfoBook = () => {
     <Containers>
       <Header />
       <InfoBookWrapper>
-        <div>
+        <BoxWraps>
           <InfoAuthImg src={`https://books.ogaw.uz/${getBook.image}`} alt="" />
-        </div>
+        </BoxWraps>
         <InfoAuthorBox>
           <AuthName> {getBook.title} </AuthName>
 

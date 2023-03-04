@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InfoAuthWrap = styled.div`
-  margin-top: 100px;
+  /* margin-top: 100px; */
   display: flex;
   gap: 25px;
 
@@ -16,6 +16,7 @@ export const InfoAuthorBox = styled.div`
   width: 100%;
   max-width: 671px;
   margin-top: 20px;
+  overflow-x: hidden;
 
   @media (max-width: 992px) {
     max-width: 100%;

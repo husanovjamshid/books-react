@@ -1,5 +1,5 @@
 // import { Box } from "../../../app.style";
-import { Containers, HeaderBrand, HeaderImg, ImgWrap } from "./header.style";
+import { Containers, HeaderBrand, HeaderImg, ImgWrap, SiteHeader } from "./header.style";
 import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../../redux/Users/userAction";
@@ -8,6 +8,7 @@ import avatar from "../../../assets/img/avloniy.png";
 
 import axios from "axios";
 import { setToken } from "../../../redux/Token/tokenAction";
+import { BoxWraps } from "../../../app.style";
 
 export const Header = () => {
   const token = useSelector((item) => item.token.token);
@@ -33,11 +34,11 @@ export const Header = () => {
 
   return (
     <>
-      <header>
+      <SiteHeader>
         <nav className="py-3 navbar-expand-lg fixed-top bg-white shadow">
           <Containers>
-            <div className="d-flex justify-content-between">
-              <button
+            <BoxWraps className="d-flex justify-content-between">
+              {/* <button
                 className="navbar-toggler"
                 type="button"
                 data-mdb-toggle="collapse"
@@ -47,18 +48,17 @@ export const Header = () => {
                 aria-label="Toggle navigation"
               >
                 <i className="fas fa-bars" />
-              </button>
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
+              </button> */}
+              <BoxWraps
+               
               >
                 <Link to="/">
                   <HeaderBrand className="navbar-brand m-0 mt-lg-0">
-                    Badiiyat
+                    Books
                   </HeaderBrand>
                 </Link>
-              </div>
-              <div className="d-flex gap-3 align-items-center">
+              </BoxWraps>
+              <BoxWraps className="d-flex gap-3 align-items-center justify-content-end">
                 <ul className="d-flex list-unstyled gap-3 m-0 mb-lg-0">
                   <li className="nav-item">
                     <NavLink
@@ -114,7 +114,7 @@ export const Header = () => {
                   </li>
                 </ul>
 
-                <div className="dropdown">
+                <BoxWraps className="dropdown">
                   <a
                     className="dropdown-toggle d-flex align-items-center hidden-arrow"
                     href="#"
@@ -165,12 +165,12 @@ export const Header = () => {
                       </p>
                     </li>
                   </ul>
-                </div>
-              </div>
-            </div>
+                </BoxWraps>
+              </BoxWraps>
+            </BoxWraps>
           </Containers>
         </nav>
-      </header>
+      </SiteHeader>
     </>
   );
 };

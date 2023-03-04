@@ -11,6 +11,7 @@ import {
   BookTitleName,
 } from "./infoAuth.style";
 import book from "../../assets/img/book.png";
+import { BoxWraps } from "../../app.style";
 
 export default class MultipleItems extends Component {
   render() {
@@ -26,12 +27,12 @@ export default class MultipleItems extends Component {
     
     
     return (
-      <div className="mb-5">
+      <BoxWraps className="mb-5">
         <BooksList>
-          <div className="d-flex justify-content-between align-items-center">
+          <BoxWraps className="d-flex justify-content-between align-items-center">
             <AuthorNovel>Asarlari</AuthorNovel>
             <Link to="/books">Barchasini ko’rish</Link>
-          </div>
+          </BoxWraps>
           <BookList>
             {/* <BookItem>
               
@@ -40,116 +41,116 @@ export default class MultipleItems extends Component {
         </BooksList>
 
         <Slider {...settings}>
-          <div>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
-          <div>
+          </BoxWraps>
+          <BoxWraps>
             <NavLink to="/books">
-              <div className="books">
+              <BoxWraps className="books">
                 <BookImg src={book} alt="" />
                 <BookTitleName>Dunyoning ishlari</BookTitleName>
                 <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-              </div>
+              </BoxWraps>
             </NavLink>
-          </div>
+          </BoxWraps>
         </Slider>
-      </div>
+      </BoxWraps>
     );
   }
 }

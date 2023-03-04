@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AuthId } from "../../redux/AuthorId/authorAction";
 import { api } from "../../Api/api";
+import { BoxWraps } from "../../app.style";
 
 export const AuthCategorys = () => {
   const [genre, setGenre] = useState([]);
@@ -87,7 +88,7 @@ export const AuthCategorys = () => {
               {genre.map((item) => (
                 <li className="nav-item" role="presentation">
                   <a
-                    className="nav-link "
+                    className="nav-link"
                     id={"#ex1-tabs-" + `${item.id}`}
                     data-mdb-toggle="tab"
                     href={"#ex1-tabs-" + `${item.id}`}
@@ -105,17 +106,17 @@ export const AuthCategorys = () => {
             ""
           )}
 
-          <div className="tab-content" id="ex1-content">
-            <div
+          <BoxWraps className="tab-content" id="ex1-content">
+            <BoxWraps
               className="tab-pane fade show active"
               id={"#ex1-tabs-" + `${genresId}}`}
               role="tabpanel"
               aria-labelledby={"#ex1-tabs-" + `${genresId}}`}
             >
               {search.length ? (
-                <div className="row gy-4">
+                <BoxWraps className="row gy-4">
                   {search.map((auth) => (
-                    <div
+                    <BoxWraps
                       className="col-12 col-sm-6 col-md-4 col-lg-3 "
                       onClick={() => handleAuthor(auth.id)}
                     >
@@ -139,13 +140,13 @@ export const AuthCategorys = () => {
                           </CardBody>
                         </CatCard>
                       </Link>
-                    </div>
+                    </BoxWraps>
                   ))}
-                </div>
+                </BoxWraps>
               ) : author.length ? (
-                <div className="row gy-4">
+                <BoxWraps className="row gy-4">
                   {author.map((auth) => (
-                    <div
+                    <BoxWraps
                       className="col-12 col-sm-6 col-md-4 col-lg-3 "
                       onClick={() => handleAuthor(auth.id)}
                     >
@@ -169,14 +170,14 @@ export const AuthCategorys = () => {
                           </CardBody>
                         </CatCard>
                       </Link>
-                    </div>
+                    </BoxWraps>
                   ))}
-                </div>
+                </BoxWraps>
               ) : (
                 <h2>Author's not found</h2>
               )}
-            </div>
-          </div>
+            </BoxWraps>
+          </BoxWraps>
         </TabWrap>
       </AuthWrap>
     </Containers>

@@ -140,6 +140,7 @@ export const BookButton = styled.button`
   font-size: 18px;
   line-height: 36px;
   margin-top: 34px;
+  margin-bottom: 15px;
   color: #ffffff;
   border: none;
 

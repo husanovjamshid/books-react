@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { BookId } from "../../redux/BookId/bookAciton";
+import { BoxWraps } from "../../app.style";
 
 export const BooksPage = () => {
   const [genre, setGenre] = useState([]);
@@ -95,58 +96,58 @@ export const BooksPage = () => {
             ""
           )}
 
-          <div className="tab-content" id="ex1-content">
-            <div
+          <BoxWraps className="tab-content" id="ex1-content">
+            <BoxWraps
               className="tab-pane fade show active"
               id={"ex1-tabs-" + `${genresId}}`}
               role="tabpanel"
               aria-labelledby={"ex1-tabs-" + `${genresId}}`}
             >
               {search.length ? (
-                <div className="row gy-4">
+                <BoxWraps className="row gy-4">
                   {search.map((item) => (
-                    <div
+                    <BoxWraps
                       onClick={() => handleBook(item.id)}
                       className="col-12 col-sm-6 col-md-4 col-lg-3 text-start d-flex justify-content-center "
                     >
                       <Link to="/infoBook">
-                        <div>
+                        <BoxWraps>
                           <BookImg
                             src={`https://books.ogaw.uz/${item.image}`}
                             alt=""
                           />
                           <BookTitleName>{item.title}</BookTitleName>
                           <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-                        </div>
+                        </BoxWraps>
                       </Link>
-                    </div>
+                    </BoxWraps>
                   ))}
-                </div>
+                </BoxWraps>
               ) : book.length ? (
-                <div className="row gy-4">
+                <BoxWraps className="row gy-4">
                   {book.map((item) => (
-                    <div
+                    <BoxWraps
                       onClick={() => handleBook(item.id)}
                       className="col-12 col-sm-6 col-md-4 col-lg-3 text-start d-flex justify-content-center"
                     >
                       <Link to="/infoBook">
-                        <div>
+                        <BoxWraps>
                           <BookImg
                             src={`https://books.ogaw.uz/${item.image}`}
                             alt=""
                           />
                           <BookTitleName>{item.title}</BookTitleName>
                           <BookAuthorName>O’tkir Hoshimov</BookAuthorName>
-                        </div>
+                        </BoxWraps>
                       </Link>
-                    </div>
+                    </BoxWraps>
                   ))}
-                </div>
+                </BoxWraps>
               ) : (
                 <h2>Book's not found</h2>
               )}
-            </div>
-          </div>
+            </BoxWraps>
+          </BoxWraps>
         </TabWrap>
       </AuthWrap>
     </Containers>

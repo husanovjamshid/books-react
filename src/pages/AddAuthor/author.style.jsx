@@ -143,6 +143,7 @@ export const BookButton = styled.button`
 	margin-top: 34px;
 	color: #ffffff;
 	border: none;
+	margin-bottom: 15px;
 
 	@media (max-width: 768px) {
 		margin-top: 0px;

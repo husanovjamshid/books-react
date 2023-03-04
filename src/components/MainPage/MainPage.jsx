@@ -11,6 +11,7 @@ import {
 } from "./main.style";
 import "./main.css";
 import { SearchPage } from "./SearchPage/SearchPage";
+import { BoxWraps } from "../../app.style";
 
 export default class SimpleSlider extends Component {
   render() {
@@ -26,9 +27,9 @@ export default class SimpleSlider extends Component {
 
     return (
       <>
-        <div className="position-relative">
+        <BoxWraps className="position-relative">
           <Slider {...settings}>
-            <div
+            <BoxWraps
               className="position-relative"
             >
               <HeroBg src={homeBg} alt="" />
@@ -37,8 +38,8 @@ export default class SimpleSlider extends Component {
                   Temuriylar <br /> davri <br /> adabiyoti
                 </Title>
               </TitleBox>
-            </div>
-            <div
+            </BoxWraps>
+            <BoxWraps
               className="position-relative"
             >
               <HeroBg src={homeBg} alt="" />
@@ -47,8 +48,8 @@ export default class SimpleSlider extends Component {
                   Jadid <br /> davri <br /> adabiyoti
                 </Title>
               </TitleBox>
-            </div>
-            <div
+            </BoxWraps>
+            <BoxWraps
               // style={{ overflow: "hidden", borderRadius: "19px" }}
               className="position-relative"
             >
@@ -58,8 +59,8 @@ export default class SimpleSlider extends Component {
                   Sovet <br /> davri <br /> adabiyoti
                 </Title>
               </TitleBox>
-            </div>
-            <div
+            </BoxWraps>
+            <BoxWraps
               // style={{ overflow: "hidden", borderRadius: "19px" }}
               className="position-relative"
             >
@@ -69,11 +70,11 @@ export default class SimpleSlider extends Component {
                   Mustaqillik <br /> davri <br /> adabiyoti
                 </Title>
               </TitleBox>
-            </div>
+            </BoxWraps>
           </Slider>
 
           <SearchPage />
-        </div>
+        </BoxWraps>
       </>
     );
   }

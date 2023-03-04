@@ -143,11 +143,12 @@ export const SignUp = () => {
                     outline: "none",
                     padding: "10px 0 10px 28px",
                   }}
-                  placeholder="Phone number"
+                  placeholder="91 910 49 10"
                   type="number"
                   aria-describedby="emailHelp"
                   ref={phoneRef}
-                  defaultValue="999104910"
+                  maxLength='9'
+                  minLength='9'
                   required
                 />
                 {/* <ReqSpan>
