@@ -88,7 +88,7 @@ export const AuthCategorys = () => {
               {genre.map((item) => (
                 <li className="nav-item" role="presentation">
                   <a
-                    className="nav-link"
+                    className="nav-link py-0"
                     id={"#ex1-tabs-" + `${item.id}`}
                     data-mdb-toggle="tab"
                     href={"#ex1-tabs-" + `${item.id}`}
